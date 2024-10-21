@@ -1,0 +1,6 @@
+User(id, name, email, password, is_active,create_at, update_at)
+Products(id, name, brand, price, quantity, description, image, id_category)
+Categories(id, name)
+Orders(id, id_user, order_date, total_price, status)
+OrdersDetails(id, id_order, id_product, quantity, unit_price)
+Cart(id, id_user, id_product, quantity)

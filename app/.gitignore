@@ -1,0 +1,27 @@
+# Laravel & PHP-related files
+
+/vendor
+/node_modules
+
+# Laravel specific files
+/public/storage
+/public/hot
+/storage/*.key
+/.env
+.phpunit.result.cache
+
+# Ignore the Laravel mix and Vite file
+/public/mix-manifest.json
+/public/hot
+/vite
+/vite.config.js
+
+# IDE and system specific files
+.idea
+.vscode
+.env.*
+.DS_Store
+Thumbs.db
+*.loggit remote add origin https://github.com/Virusker/Doan_Web_Ban_Dien_Thoai.git
+/storage/framework/views/*
+/storage/logs/*
