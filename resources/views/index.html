@@ -211,10 +211,11 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel" aria-labelledby="nav-sign-in-tab">
-                                <form id="sign-in-form" class="needs-validation" novalidate>
+                                <!-- login -->
+                                <form action="/login" method="post" id="sign-in-form" class="needs-validation" novalidate>
                                     <div class="form-group py-2">
                                         <label class="mb-2" for="sign-in-email">Email:</label>
-                                        <input type="email" id="sign-in-email" name="username" placeholder="Nhập email" class="form-control p-2" required>
+                                        <input type="email" id="sign-in-email" name="email" placeholder="Nhập email" class="form-control p-2" required>
                                         <div class="invalid-feedback text-start">
                                             Vui lòng nhập email phù hợp.
                                         </div>
@@ -235,7 +236,8 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-                                <form id="register-form" class="needs-validation" novalidate>
+                                <!-- register -->
+                                <form action="/register" method="post" id="register-form" class="needs-validation" novalidate>
                                     <div class="form-group py-2">
                                         <label class="mb-2" for="register-email">Emai:</label>
                                         <input type="email" id="register-email" name="username" placeholder="Nhập email." class="form-control p-2" required>
@@ -293,7 +295,7 @@
                     <img src="../image/imageHeader2.jpg" alt="Chicago" class="d-block w-100 h-100">
                   </div>
                   <div class="carousel-item h-100">
-                    <img src="../image/imageHeader3.jpg" alt="New York" class="d-block w-100 h-100">
+                    <img src="../image/banner.jpg" alt="New York" class="d-block w-100 h-100">
                   </div>
                 </div>
               
