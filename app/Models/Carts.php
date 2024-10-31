@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model
+class Carts extends Model
 {
-    protected $table = 'Orders';
+    protected $table = 'Carts';
     protected $primaryKey = 'id';
     public $incrementing = true;
     protected $keyType = 'int';
@@ -14,12 +14,17 @@ class Orders extends Model
 
     protected $fillable = [
         'user_id',
-        'order_date',
-        'total_price'
+        'product_id',
+        'quantity'
     ];
 
     public function user()
     {
         return $this->belongsTo(Users::class, 'user_id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Products::class, 'product_id');
     }
 }
