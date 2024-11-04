@@ -13,7 +13,7 @@
             <div class="wrap-new-items-List">
                 <div class="new-items-List">
                     <div class="list">
-                    @foreach($products as $product)
+                    @foreach($products_new as $product)
                         <div class="product-item new-item card">
                                 <span class="flag">New</span>
                                 <div class="product-item-img">

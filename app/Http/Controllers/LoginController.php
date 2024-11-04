@@ -21,10 +21,15 @@ class LoginController extends Controller
     {
         // Xử lý dữ liệu form
         $credentials = $request->only('email', 'password');
+        $email = $request->email;
+        $password = $request->password;
 
-            
+        $remember = $request->has('remember') ? true : false;
+        
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
 
-        if (Auth::attempt($credentials)) {
+
+        // if (Auth::attempt($credentials)) {
             // Nếu đăng nhập thành công redirect về trang index
             return redirect()->intended('/');
             // return redirect()->intended('dashboard');

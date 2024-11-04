@@ -38,7 +38,8 @@ class Users extends Authenticatable
         'name',
         'email',
         'password',
-        'is_active'
+        'is_active',
+        'remember_token',
     ];
 
     // Thiết lập các giá trị mặc định cho cột `create_at` và `update_at`

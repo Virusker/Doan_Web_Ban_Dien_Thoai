@@ -13,6 +13,6 @@ class indexController extends Controller
         // foreach(User::all() as $user){
         //     echo $user->name . "<br>";
         // }
-        return view('index',['products' => Products::all()]);
+        return view('index',['products_new' => Products::all(),'products_popular' => Products::all()]);
     }
 }

@@ -18,6 +18,8 @@
         <input type="text" id="email" name="email"><br>
         <label for="password">Mật khẩu:</label><br>
         <input type="password" id="password" name="password"><br><br>
+        <!-- remember -->
+        <input type="checkbox" id="remember" name="remember">
         <button type="submit">Đăng Nhập</button>
     </form>
 @endsection
