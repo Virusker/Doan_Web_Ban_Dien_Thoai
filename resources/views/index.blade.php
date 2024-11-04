@@ -13,90 +13,24 @@
             <div class="wrap-new-items-List">
                 <div class="new-items-List">
                     <div class="list">
+                    @foreach($products as $product)
                         <div class="product-item new-item card">
                                 <span class="flag">New</span>
                                 <div class="product-item-img">
                                     <img src="{{ Vite::asset('resources/image/iphone-12-den-600x600.jpg') }}" class="card-img-top" alt="...">
                                 </div>
                                 <div class="card-body">
-                                  <h6 class="card-title fw-bold">Iphone 12 128GB</h6>
-                                  <p class="card-text">13.000.000đ</p>
+                                  <h6 class="card-title fw-bold">{{ $product->name }}</h6>
+                                  <p class="card-text">{{ $product->price }}</p>
                                   <div class="heart-icon">
                                     <i class="fa-regular fa-heart"></i>
                                     <i class="fa-solid fa-heart"></i>
                                   </div>
                               </div>
                         </div>
-                        <div class="product-item new-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/vivo-y28-xanh-thumbn-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Vivo Y28 8GB/256GB</h6>
-                              <p class="card-text">6.000.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="product-item new-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/xiaomi-redmi-note-13-green-thumb-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Xiaomi Redmi Note 13 Pro 8GB/128GB</h6>
-                              <p class="card-text">7.000.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="product-item new-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/samsung-galaxy-m15-5g-blue-thumb-1-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Samsung Galaxy M15 5G/128GB</h6>
-                              <p class="card-text">4.300.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="product-item new-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/redmi-13-blue-thumb-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Xiaomi Redmi 13 6GB/128GB</h6>
-                              <p class="card-text">4.000.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="product-item new-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/vivo-y100-xanh-thumb-1-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Vivo Y100 8GB/128GB</h6>
-                              <p class="card-text">6.500.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+                        
                     </div>
                 </div>
                 <button id="new-item-pre-btn" class="hiden_tablet_mobile"><i class="fa-solid fa-chevron-left"></i></button>
@@ -143,7 +77,7 @@
     </section> -->
     <section class="product-list container-md">
         <div class="section-title d-flex justify-content-between align-items-center mb-4 mt-4">
-            <h2 class="d-flex align-items-center">Gợi ý cho bạn</h2>
+            <h2 class="d-flex align-items-center">Sản phẩm bán chạy</h2>
             <a href="" class="btn">Xem thêm</a>
           </div>
         <div class="row">

@@ -6,4 +6,5 @@
     <h2>admin</h2>
     <p>This is the content of the welcome page.</p>
 
+    
 @endsection
