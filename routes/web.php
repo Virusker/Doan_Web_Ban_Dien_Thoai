@@ -45,10 +45,27 @@ Route::middleware(AdminAuthenticate::class)->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
 
     Route::get('/admin/categories', [AdminController::class, 'categories']);
+    Route::get('/admin/add_category', [AdminController::class, 'add_category']);
+    Route::post('/admin/add_category', [AdminController::class, 'add_category_post']);
+    Route::get('/admin/del_category/{category_id?}', [AdminController::class, 'del_category']);
+    Route::get('/admin/update_category/{category_id?}', [AdminController::class, 'update_category']);
+    Route::post('/admin/update_category', [AdminController::class, 'update_category_post']);
 
     Route::get('/admin/products', [AdminController::class, 'products']);
-    Route::get('/admin/products/add', [AdminController::class, 'add_products']);
-    Route::post('/admin/products/add', [AdminController::class, 'add_products_post']);
+    Route::get('/admin/add_product', [AdminController::class, 'add_product']);
+    Route::post('/admin/add_product', [AdminController::class, 'add_product_post']);
+    Route::get('/admin/del_product/{product_id?}', [AdminController::class, 'del_product']);
+    Route::get('/admin/update_product/{product_id?}', [AdminController::class, 'update_product']);
+    Route::post('/admin/update_product', [AdminController::class, 'update_product_post']);
+
+
+    Route::get('/admin/product_variants', [AdminController::class, 'product_variants']);
+    Route::get('/admin/add_product_variant/{product_id?}', [AdminController::class, 'add_product_variant']);
+    Route::post('/admin/add_product_variant', [AdminController::class, 'add_product_variant_post']);
+    Route::get('/admin/del_product_variant/{product_variant_id?}', [AdminController::class, 'del_product_variant']);
+    Route::get('/admin/update_product_variant/{product_variant_id?}', [AdminController::class, 'update_product_variant']);
+    Route::post('/admin/update_product_variant', [AdminController::class, 'update_product_variant_post']);
+
     Route::get('/admin/logout', [AdminLoginController::class, 'logout']);
 
     Route::get('/admin/dashboard', function () {

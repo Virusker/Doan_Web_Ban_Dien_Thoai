@@ -11,6 +11,8 @@
             @endforeach
         </div>
     @endif
+
+
     <form action="/register" method="post">
         @csrf
         <label for="name">Tên:</label><br>

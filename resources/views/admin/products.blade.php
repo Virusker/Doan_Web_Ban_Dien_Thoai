@@ -11,10 +11,9 @@
             <tr>
               <th scope="col">id</th>
               <th scope="col">tên sản phẩm</th>
-              <th scope="col">giá</th>
               <th scope="col">mô tả</th>
-              <th scope="col">hình ảnh</th>
-              <th scope="col"><a class="btn btn-primary" href="/admin/products/add">Thêm</a></th>
+              <th scope="col">hãng</th>
+              <th scope="col"><a class="btn btn-primary" href="/admin/add_product">Thêm</a></th>
             </tr>
           </thead>
           <tbody>
@@ -22,13 +21,14 @@
             <tr>
               <td>{{ $product->id }}</td>
               <td>{{ $product->name }}</td>
-              <td>{{ $product->price }}</td>
               <td>{{ $product->description }}</td>
-              <td>x</td>
+              <td>{{ $product->category->name }}</td>
+
               <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a class="btn btn-warning" href="/admin/products/{{ $product->id }}">sửa</a>
-                    <a class="btn btn-danger" href="/admin/products/{{ $product->id }}/delete">xóa</a>
+                  <a class="btn btn-primary" href="/admin/add_product_variant/{{ $product->id }}">thêm biến thể</a>
+                  <a class="btn btn-warning" href="/admin/update_product/{{ $product->id }}">sửa</a>
+                  <a class="btn btn-danger" href="/admin/del_product/{{ $product->id }}/delete">xóa</a>
                 </div>
               </td>
 

@@ -29,7 +29,7 @@
       </symbol>
     </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <!-- <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
               id="bd-theme"
               type="button"
@@ -62,7 +62,7 @@
           </button>
         </li>
       </ul>
-    </div>
+    </div> -->
 
     
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -161,10 +161,24 @@
                 Orders
               </a>
             </li>
+            <!-- catogery -->
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 {{ $currentUrl == 'admin/categories' ? 'active' : '' }}" href="/admin/categories">
+                <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+                Categories
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 {{ $currentUrl == 'admin/products' ? 'active' : '' }}" href="/admin/products">
                 <svg class="bi"><use xlink:href="#cart"/></svg>
                 Products
+              </a>
+            </li>
+            <!-- product_variants -->
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 {{ $currentUrl == 'admin/product_variants' ? 'active' : '' }}" href="/admin/product_variants">
+                <svg class="bi"><use xlink:href="#cart"/></svg>
+                Product Variants
               </a>
             </li>
             <li class="nav-item">
@@ -187,7 +201,7 @@
             </li>
           </ul>
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+          <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span>Saved reports</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
               <svg class="bi"><use xlink:href="#plus-circle"/></svg>
@@ -218,7 +232,7 @@
                 Year-end sale
               </a>
             </li>
-          </ul>
+          </ul> -->
 
           <hr class="my-3">
 

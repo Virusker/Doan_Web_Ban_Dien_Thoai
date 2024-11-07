@@ -17,7 +17,11 @@
                         <div class="product-item new-item card">
                                 <span class="flag">New</span>
                                 <div class="product-item-img">
-                                    <img src="{{ Vite::asset('resources/image/iphone-12-den-600x600.jpg') }}" class="card-img-top" alt="...">
+                                  @if($product->primaryImage)
+                                    <img src="{{ Vite::asset('public/images/products/' . $product->primaryImage->image_url) }}" class="card-img-top" alt="...">
+                                  @else
+                                    <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top" alt="...">
+                                    @endif
                                 </div>
                                 <div class="card-body">
                                   <h6 class="card-title fw-bold">{{ $product->name }}</h6>
