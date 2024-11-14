@@ -137,21 +137,12 @@
                     <li class="has-hover nav__list-item hiden_tablet_mobile">
                         <a href="">Tất cả</a>
                     </li>
+                    @foreach($categories as $c)
                     <li class="has-hover nav__list-item hiden_tablet_mobile">
-                        <a href="">Iphone</a>
+                        <a href="/products/{{ $c->id }}">{{ $c->name }}</a>
                     </li>
-                    <li class="has-hover nav__list-item hiden_tablet_mobile">
-                        <a href="">Samsung</a>
-                    </li>
-                    <li class="nav__list-item hiden_tablet_mobile">
-                        <a href="">Xiaomi</a>
-                    </li>
-                    <li class="nav__list-item hiden_tablet_mobile">
-                        <a href="">Oppo</a>    
-                    </li>
-                    <li class="nav__list-item hiden_tablet_mobile">
-                        <a href="">Vivo</a>    
-                    </li>
+                    @endforeach
+                    <!--  -->
                     <li class="nav__list-item hiden_tablet_mobile" style="border-right: 1px solid var(--white-color);">
                         <a href="">Phụ kiện</a>    
                     </li>

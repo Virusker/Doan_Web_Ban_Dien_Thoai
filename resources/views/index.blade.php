@@ -83,136 +83,36 @@
         <div class="section-title d-flex justify-content-between align-items-center mb-4 mt-4">
             <h2 class="d-flex align-items-center">Sản phẩm bán chạy</h2>
             <a href="" class="btn">Xem thêm</a>
-          </div>
+        </div>
+
         <div class="row">
+          @foreach($products_popular as $product)
             <div class="col-xl-3 col-6 col-md-4">
                 <div class="product-item card">
-                                <span class="flag">Trả góp 0%</span>
+                                <span class="flag">HOT</span>
+                                
                             <div class="product-item-img">
-                                <img src="../image/oppo-reno10-pro-plus-thumbnew-600x600.jpg" class="card-img-top" alt="...">
+                            @if($product->primaryImage)
+                                    <img src="{{ Vite::asset('public/images/products/' . $product->primaryImage->image_url) }}" class="card-img-top" alt="...">
+                                  @else
+                                    <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top" alt="...">
+                                    @endif
+
                             </div>
                             <div class="card-body">
-                              <h6 class="card-title fw-bold">Oppo Reno10 Pro+ 12GB/128GB</h6>
-                              <p class="card-text">15.000.000đ</p>
+                              <h6 class="card-title fw-bold">{{ $product->name }}</h6>
+                              <p class="card-text">{{ $product->price }}</p>
                               <div class="heart-icon">
                                 <i class="fa-regular fa-heart"></i>
                                 <i class="fa-solid fa-heart"></i>
                               </div>
                             </div>
                         </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">Trả góp 0%</span>
-                            <div class="product-item-img">
-                                <img src="../image/ss-s24-ultra-xam-222.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Samsung Galaxy S24 Ultra 12GB 256GB</h6>
-                              <p class="card-text">26.000.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">Trả góp 0%</span>
-                            <div class="product-item-img">
-                                <img src="../image/xiaomi_14t_pro_1_.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Xiaomi 14T Pro 12GB 512GB</h6>
-                              <p class="card-text">18.000.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">Trả góp 0%</span>
-                            <div class="product-item-img">
-                                <img src="../image/tainghe_apple-airpods-pro-2-usb-c_1_.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Tai nghe Bluetooth Apple Airpods Pro 2 2023 Chính hãng Apple Việt Nam </h6>
-                              <p class="card-text">5.590.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/cap-type-c-1m-xmobile-dr-t10-thumb-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Cáp sạc Type C 1m XMoblie DR-T10</h6>
-                              <p class="card-text">170.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/adapter-sac-2-cong-usb-type-c-iq3-20w-anker-a2348-thumb-638622777852209142-600x600.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Sạc 2 cổng Anker A2348</h6>
-                              <p class="card-text">150.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">New</span>
-                            <div class="product-item-img">
-                                <img src="../image/Sac_3_cong_Anker_A2674.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Sạc 3 cổng Anker A2674</h6>
-                              <p class="card-text">550.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
-            <div class="col-xl-3 col-6 col-md-4">
-                <div class="product-item card">
-                                <span class="flag">50% off</span>
-                            <div class="product-item-img">
-                                <img src="../image/Cap_TypeC_1m_AVA_CS_CL0862.jpg" class="card-img-top" alt="...">
-                            </div>
-                            <div class="card-body">
-                              <h6 class="card-title fw-bold">Cáp sạc Type C 1m AVA+ CS_CL0862</h6>
-                              <p class="card-text">135.000đ</p>
-                              <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
-                              </div>
-                            </div>
-                        </div>
-            </div>
+                        
+                        
+                      </div>
+                      @endforeach
+ 
         </div>
     </section>
     <div id="backTop">

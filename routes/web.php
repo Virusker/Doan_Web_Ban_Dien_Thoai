@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductsController;
 
 // admin
 use App\Http\Controllers\admin\AdminController;
@@ -26,6 +27,8 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/logout', [LogoutController::class, 'logout']);
+
+Route::get('/products/{category_id?}',[ProductsController::class,'index']);
 
 Route::middleware(Authenticate::class)->group(function () {
 
