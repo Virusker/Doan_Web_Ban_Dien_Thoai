@@ -27,7 +27,10 @@ class ProductsController extends Controller
 
         return view('products',['products' => $products, 'categories' => $categories]);
     }
+    
     public function product_detail(Request $request,$product_id = null){
-        return view('product_detail');
+        $p = DB::table('Products')->where('id', $product_id)->first();
+
+        return view('product_detail',['product' => $p]);
     }
 }
