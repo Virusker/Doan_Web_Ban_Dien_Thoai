@@ -29,6 +29,7 @@ class ProductsController extends Controller
     }
 
     public function product_detail(Request $request,$product_id = null){
+        $categories = Category::all();
         $p = DB::table('Products')->where('id', $product_id)->first();
 
         return view('product_detail',['product' => $p, 'categories' => $categories]);
