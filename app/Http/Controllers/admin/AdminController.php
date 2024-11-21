@@ -118,7 +118,6 @@ class AdminController extends Controller
             $product->save();
         }
 
-
         // add_product_image
 
         if ($request->hasFile('imageprimary')) {

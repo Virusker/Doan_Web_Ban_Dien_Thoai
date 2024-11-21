@@ -14,6 +14,7 @@
                 <div class="new-items-List">
                     <div class="list">
                     @foreach($products_new as $product)
+                        <a href="">
                         <div class="product-item new-item card">
                                 <span class="flag">New</span>
                                 <div class="product-item-img">
@@ -32,6 +33,7 @@
                                   </div>
                               </div>
                         </div>
+                        </a>
                         @endforeach
 
                         

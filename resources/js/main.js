@@ -115,7 +115,7 @@ function main(){
 
     }
     handleScroll();
-    countdown();
+    // countdown();
     validateForm();
 
 }
