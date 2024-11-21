@@ -27,4 +27,7 @@ class ProductsController extends Controller
 
         return view('products',['products' => $products, 'categories' => $categories]);
     }
+    public function product_detail(Request $request,$product_id = null){
+        return view('product_detail');
+    }
 }

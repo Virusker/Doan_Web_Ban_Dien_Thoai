@@ -30,6 +30,8 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 
 Route::get('/products/{category_id?}',[ProductsController::class,'index']);
 
+Route::get('/p/{product_id?}',[ProductsController::class,'product_detail']);
+
 Route::middleware(Authenticate::class)->group(function () {
 
     Route::get('/dashboard', function () {
