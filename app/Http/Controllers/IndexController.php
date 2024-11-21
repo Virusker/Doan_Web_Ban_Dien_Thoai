@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\ProductVariants;
+use App\Models\Category;
 
 use Illuminate\Support\Facades\DB;
 
@@ -23,6 +24,8 @@ class indexController extends Controller
         //     ->get();
         $products_new = Product::all();
 
-        return view('index',['products_new' => $products_new,'products_popular' => Product::all()]);
+        $categories = Category::all();
+
+        return view('index',['products_new' => $products_new,'products_popular' => Product::all(),'categories' => $categories]);
     }
 }
