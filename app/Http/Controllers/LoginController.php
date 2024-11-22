@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Category;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,8 @@ class LoginController extends Controller
     // Phương thức GET để hiển thị trang đăng nhập
     public function index()
     {
-        return view('login');
+        $categories = Category::all();
+        return view('login',['categories' => $categories]);
     }
 
     // Phương thức POST để xử lý dữ liệu từ form đăng nhập

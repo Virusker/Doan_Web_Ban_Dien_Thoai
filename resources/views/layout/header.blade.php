@@ -68,9 +68,7 @@
                         </div>
                     </li>
                     <li class="navbar-top__list-item user-btn">
-                        <a href="#" class="navbar__list-item-link">Đăng nhập
-
-                        </a>
+                        <a href="#" class="navbar__list-item-link">Đăng nhập</a>
                     </li>
                 </ul>
             </div>
@@ -186,6 +184,7 @@
                             <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel" aria-labelledby="nav-sign-in-tab">
                                 <!-- login -->
                                 <form action="/login" method="post" id="sign-in-form" class="needs-validation" novalidate>
+                                    @csrf
                                     <div class="form-group py-2">
                                         <label class="mb-2" for="sign-in-email">Email:</label>
                                         <input type="email" id="sign-in-email" name="email" placeholder="Nhập email" class="form-control p-2" required>
@@ -205,12 +204,14 @@
                                         <span class="label-body">Lưu tài khoản</span>
                                         <span class="label-body"><a href="#" class="fw-bold">Quên mật khẩu:</a></span>
                                     </label>
-                                    <button type="submit" id="sign-in-submit" class="btn btn-login btn-dark w-100 my-3">Đăng nhập:</button>
+                                    <button type="submit" id="sign-in-submit" class="btn btn-login btn-dark w-100 my-3">Đăng nhập</button>
+                                    <input type="submit" class="btn btn-login btn-dark w-100 my-3" value="Đăng nhập">
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
                                 <!-- register -->
                                 <form action="/register" method="post" id="register-form" class="needs-validation" novalidate>
+                                    @csrf
                                     <div class="form-group py-2">
                                         <label class="mb-2" for="register-email">Emai:</label>
                                         <input type="email" id="register-email" name="username" placeholder="Nhập email." class="form-control p-2" required>
