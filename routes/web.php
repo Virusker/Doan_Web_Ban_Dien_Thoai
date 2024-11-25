@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CartController;
 
 // admin
 use App\Http\Controllers\admin\AdminController;
@@ -32,7 +33,7 @@ Route::get('/products/{category_id?}',[ProductsController::class,'index']);
 
 Route::get('/p/{product_id?}',[ProductsController::class,'product_detail']);
 
-Route::get('/cart',[ProductsController::class,'index']);
+Route::get('/cart',[CartController::class,'index']);
 
 Route::middleware(Authenticate::class)->group(function () {
 
