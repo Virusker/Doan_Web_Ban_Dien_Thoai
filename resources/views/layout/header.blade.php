@@ -124,7 +124,9 @@
                     
                     <label for="check1" class="header__cart has-hover">
                         <input type="checkbox" class="cart-input" hidden id="check1">
-                        <i class="fa-solid fa-bag-shopping header__cart-icon"></i>
+                        <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                        
                     </label>
                 </div>
             </div>

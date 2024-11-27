@@ -1,0 +1,120 @@
+
+
+.cart {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tfoot {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.total-label {
+    text-align: right;
+    padding-right: 10px;
+    background-color: #ddd;
+}
+
+.total-amount {
+    text-align: left;
+    background-color: #d4f1d4;
+}
+
+.btn, .checkout-btn, .clear-btn, .delete-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.btn:hover, .checkout-btn:hover, .clear-btn:hover, .delete-btn:hover {
+    background-color: #45a049;
+}
+
+.quantity {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background-color: #f9f9f9;
+    pointer-events: none;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+}
+
+.clear-btn {
+    background-color: #ff5722;
+}
+
+.checkout-btn {
+    width: 100%;
+}
+
+
+/* Bố cục cho phần tổng tiền */
+.total-label {
+    text-align: right;
+    padding-right: 10px;
+    background-color: #ddd;
+}
+
+.total-amount {
+    text-align: left;
+    background-color: #d4f1d4;
+    padding-left: 10px;
+}
+
+/* Cải tiến bố cục các nút Thanh Toán và Xóa hết */
+.action-buttons {
+    text-align: center;
+}
+
+.action-btns-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.checkout-btn, .clear-btn {
+    width: 45%;
+    padding: 10px 0;
+}
+
+.checkout-btn {
+    background-color: #4CAF50;
+}
+
+.clear-btn {
+    background-color: #ff5722;
+}
+
+/* Hover effect cho các nút */
+.checkout-btn:hover, .clear-btn:hover {
+    background-color: #45a049;
+}

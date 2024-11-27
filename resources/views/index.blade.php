@@ -28,8 +28,7 @@
                                   <h6 class="card-title fw-bold">{{ $product->name }}</h6>
                                   <p class="card-text">{{ $product->price }}</p>
                                   <div class="heart-icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-cart-plus"></i>
                                   </div>
                               </div>
                         </div>
@@ -105,8 +104,8 @@
                               <h6 class="card-title fw-bold">{{ $product->name }}</h6>
                               <p class="card-text">{{ $product->price }}</p>
                               <div class="heart-icon">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart"></i>
+                              <i class="fa-solid fa-cart-plus"></i>
+                                <i class="fa-solid fa-cart-plus"></i>
                               </div>
                             </div>
                         </div>

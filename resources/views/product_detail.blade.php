@@ -3,27 +3,31 @@
 @section('title', 'Chi tiết sản phẩm')
 
 @section('content')
+
 <div class="product-details">
     <!-- Tiêu đề sản phẩm -->
-    <h1>Điện thoại Realme 2 Pro 8GB/128GB</h1>
+    <h1>{{$product->name}}</h1>
 
     <!-- Hàng đầu tiên -->
     <div class="row">
         <!-- Cột 1: Hình ảnh -->
         <div class="col image">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.0l_P5JQgxOXmCa6lf6CH2gHaOc&pid=Api&P=0&h=180" alt="Realme 2 Pro">
+            <img src="https://mcdn.coolmate.me/image/September2021/hang-dien-thoai-17.jpg" alt="Realme 2 Pro">
         </div>
 
         <!-- Cột 2: Giá và khuyến mãi -->
         <div class="col promo">
-            <div class="price">6.990.000đ</div>
+            <div class="price">1.000.000đ</div>
+            <hr>
             <div class="promo-list">
-                <h3>Khuyến mãi</h3>
+                <h4>KHUYẾN MÃI</h4>
                 <ul>
-                    <li> Khách hàng được thử máy miễn phí tại cửa hàng.</li>
-                    <li> Đổi trả lỗi trong vòng 2 tháng.</li>
+                    <li> Khách hàng sẽ được giảm 5% khi mua tại cửa hàng.</li>
+                    
                 </ul>
+                <hr>
                 <p><strong>Trong hộp có:</strong> Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng</p>
+                <hr>
                 <p><strong>Bảo hành:</strong> 12 tháng.</p>
                 <p>1 đổi 1 trong 1 tháng nếu lỗi kỹ thuật.</p>
             </div>
@@ -72,6 +76,17 @@
                 </tr>
             </table>
         </div>
+
+
+        <!-- Mô tả sản phẩm -->
+        <div class="product-description">
+            <h3>Mô tả sản phẩm</h3>
+            <p>
+                'Chiếc điện thoại thông minh này mang đến trải nghiệm hoàn hảo với thiết kế hiện đại và nhiều tính năng vượt trội. Thích hợp cho cả công việc và giải trí, đây là sự lựa chọn lý tưởng cho mọi người dùng.
+            </p>
+        </div>
+
+
     </div>
 </div>
 @endsection

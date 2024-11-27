@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Include CSS files here -->
-    @vite(['resources/css/Style.css','resources/css/responsive.css','resources/css/product.css','resources/css/responsive.css','resources/css/bootstrap/bootstrap.min.css','resources/css/productDetail.css'])
+    @vite(['resources/css/Style.css','resources/css/responsive.css','resources/css/product.css','resources/css/responsive.css','resources/css/bootstrap/bootstrap.min.css','resources/css/productDetail.css','resources/css/cart.css'])
 
     @vite(['resources/js/bootstrap/bootstrap.min.js','resources/js/main.js'])
 </head>

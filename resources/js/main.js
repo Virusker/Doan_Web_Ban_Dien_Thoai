@@ -1,12 +1,14 @@
 const widthItem = document.querySelector('.new-item')
 const formL = document.querySelector('.new-items-List')
-const backTop = document.querySelector("#backTop");
+const backTop = document.querySelector("#backTop")
 const closeNavHeader = document.querySelector(".close-nav-header")
-const barsBtn = document.querySelector(".bars-btn");
-const navheader =document.querySelector(".nav-header");
-const userBtns = document.querySelectorAll(".user-btn");
-const modal = document.querySelector(".modal");
-const closemodal = document.querySelector(".close-modal");
+const barsBtn = document.querySelector(".bars-btn")
+const navheader =document.querySelector(".nav-header")
+const userBtns = document.querySelectorAll(".user-btn")
+const modal = document.querySelector(".modal")
+const closemodal = document.querySelector(".close-modal")
+const carts = document.querySelectorAll(".heart-icon")
+const cartCount = document.querySelector(".cart-count")
 const handleScroll = () => {
     window.addEventListener("scroll", () => {
         if (document.documentElement.scrollTop > 500) {
@@ -29,6 +31,14 @@ closeNavHeader.onclick=()=>{
     navheader.classList.add("translate-l");
 }
 
+const handleClickAddCart = ()=>{
+    let count = parseInt(cartCount.textContent)
+    carts.forEach(cart=> cart.onclick=function(event){
+        event.stopPropagation()
+        event.preventDefault()
+        cartCount.textContent=++count
+    })
+}
 
 const countdown = ()=>{
     const now = new Date().getTime();
@@ -86,6 +96,7 @@ function validateForm() {
     confirmPw(); 
   }
 function main(){
+    let cartList =['dt01', 'dt02']
     if(document.querySelector('#new-item-next-btn')){
         document.querySelector('#new-item-next-btn').onclick = function(){
             if(widthItem) formL.scrollLeft += widthItem.offsetWidth;
@@ -117,6 +128,7 @@ function main(){
     handleScroll();
     // countdown();
     validateForm();
+    handleClickAddCart();
 
 }
 

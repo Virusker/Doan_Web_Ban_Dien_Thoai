@@ -365,12 +365,30 @@ body{
     position: relative;
     cursor: pointer;
     margin: auto 15px auto 35px;
+    position: relative;
     -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
     color: var(--primary-color);
     font-size: 32px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .header__search-input-wrap {
@@ -749,7 +767,11 @@ body{
     cursor: pointer;
 }
 
-.heart-icon i:last-child{
+.heart-icon i:hover{
+    opacity: 0.8;
+}
+
+/* .heart-icon i:last-child{
     display: none;
     z-index: 4;
 }
@@ -757,7 +779,7 @@ body{
 .heart-icon:hover i:last-child{
     display: block;
     opacity: 0.9;
-}
+} */
 
 
 /* CSS limited  discount*/
