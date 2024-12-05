@@ -2,6 +2,10 @@
 
 @section('title', 'Chi tiết sản phẩm')
 
+@section('js')
+@vite(['resources/js/product.js'])
+@endsection
+
 @section('content')
 
 <div class="product-details">
@@ -17,13 +21,13 @@
 
         <!-- Cột 2: Giá và khuyến mãi -->
         <div class="col promo">
-            <div class="price">1.000.000đ</div>
+
+            <div class="price">{{ number_format($product->getPrice(), 0, ',', '.') }} ₫</div>
             <hr>
             <div class="promo-list">
                 <h4>KHUYẾN MÃI</h4>
                 <ul>
-                    <li> Khách hàng sẽ được giảm 5% khi mua tại cửa hàng.</li>
-                    
+                    <li> Khách hàng sẽ được giảm 5% khi mua tại cửa hàng.</li>      
                 </ul>
                 <hr>
                 <p><strong>Trong hộp có:</strong> Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng</p>
@@ -31,7 +35,20 @@
                 <p><strong>Bảo hành:</strong> 12 tháng.</p>
                 <p>1 đổi 1 trong 1 tháng nếu lỗi kỹ thuật.</p>
             </div>
-            <button class="add-to-cart">Thêm vào giỏ hàng</button>
+            <form action="" id="addcart-form">
+            <div class="mb-3">
+                <button class="btn minus">-</button>
+                    <input name="quantity" type="text" value="1" min="1" class="quantity">
+                <button class="btn plus">+</button>
+            </div>
+
+            <select class="form-select" name="pv_id" id="pv-select">
+                 @foreach($product_variants as $pv)
+                <option data-price="{{$pv->price}}" value="{{ $pv->id }}">Màu: {{ $pv->color }}, Ram: {{ $pv->ram }}GB, Rom: {{ $pv->storage }}GB</option>
+                @endforeach
+            </select>
+            <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+            </form>
         </div>
 
         <!-- Cột 3: Thông số kỹ thuật -->

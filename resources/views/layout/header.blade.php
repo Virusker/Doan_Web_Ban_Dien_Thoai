@@ -49,6 +49,7 @@
                             <div class="navbar__notify-footer">
                                 <a href="" class="navbar__notify-footer-btn">Xem tất cả</a>
                             </div>
+                        </div>
                     </li>
                     <li class="navbar-top__list-item">
                         <a href="" class="navbar__list-item-link">
@@ -67,9 +68,23 @@
                             <p class="navbar__language-en navbar__language--pointer">English</p>
                         </div>
                     </li>
-                    <li class="navbar-top__list-item user-btn">
-                        <a href="#" class="navbar__list-item-link">Đăng nhập</a>
+                    @if (Auth::check())
+                    <li class="has-hover navbar-top__list-item">
+                        <div class="item-content">
+                            <i class="navbar__list-icon fa-solid fa-globe"></i>
+                            {{ Auth::user()->name }}
+                            <i class="navbar__list-icon fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="navbar__language apper">
+                            <a href="/logout" class="navbar__language-vn navbar__language--pointer">logout</p>
+                            <!-- <p class="navbar__language-en navbar__language--pointer">English</p> -->
+                        </div>
                     </li>
+                    @else
+                    <li class="navbar-top__list-item user-btn">            
+                        <a href="/login" class="navbar__list-item-link">Đăng nhập</a>    
+                    </li>
+                    @endif 
                 </ul>
             </div>
     
@@ -78,8 +93,8 @@
                 <div class="container header-with-search">
                     <div class="header__logo">
                         <i class="fa-solid fa-bars bars-btn"></i>
-                        <a href="./index.html ">
-                            <img src="../image/logo.jpg" alt="" class="header__logo-img">
+                        <a href="/">
+                            <img src="{{ Vite::asset('public/images/products/default.png') }}" alt="" class="header__logo-img">
                         </a>
                         <i class="fa-regular fa-user user-btn"></i>
                     </div>
@@ -123,10 +138,11 @@
                     </div>
                     
                     <label for="check1" class="header__cart has-hover">
+                        <a href="/cart">
                         <input type="checkbox" class="cart-input" hidden id="check1">
                         <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                         <span class="cart-count" id="cart-count">0</span>
-                        
+                        </a>          
                     </label>
                 </div>
             </div>
@@ -135,7 +151,7 @@
                 <ul class="nav__list">
                     <div class="close-nav-header"><i class="fa-solid fa-xmark"></i></div>
                     <li class="has-hover nav__list-item hiden_tablet_mobile">
-                        <a href="">Tất cả</a>
+                        <a href="/">Tất cả</a>
                     </li>
                     @foreach($categories as $c)
                     <li class="has-hover nav__list-item hiden_tablet_mobile">
@@ -146,6 +162,7 @@
                     <li class="nav__list-item hiden_tablet_mobile" style="border-right: 1px solid var(--white-color);">
                         <a href="">Phụ kiện</a>    
                     </li>
+
                     <li class="nav__list-item active-tablet">
                         <a href="./about.html">Trang trí</a>    
                     </li>
@@ -168,7 +185,7 @@
             </nav>
         </div>
     </header>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
@@ -184,7 +201,7 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel" aria-labelledby="nav-sign-in-tab">
-                                <!-- login -->
+                                
                                 <form action="/login" method="post" id="sign-in-form" class="needs-validation" novalidate>
                                     @csrf
                                     <div class="form-group py-2">
@@ -211,7 +228,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-                                <!-- register -->
+                                
                                 <form action="/register" method="post" id="register-form" class="needs-validation" novalidate>
                                     @csrf
                                     <div class="form-group py-2">
@@ -250,4 +267,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
