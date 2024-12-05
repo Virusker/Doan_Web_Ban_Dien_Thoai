@@ -94,7 +94,7 @@
                     <div class="header__logo">
                         <i class="fa-solid fa-bars bars-btn"></i>
                         <a href="/">
-                            <img src="{{ Vite::asset('public/images/products/default.png') }}" alt="" class="header__logo-img">
+                            <img src="{{ Vite::asset('public/images/products/logo.jpg') }}" alt="" class="header__logo-img">
                         </a>
                         <i class="fa-regular fa-user user-btn"></i>
                     </div>
