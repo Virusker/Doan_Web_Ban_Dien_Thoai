@@ -3,7 +3,6 @@
 @section('title', 'Home')
 
 
-
 @section('content')
 <Section class="new-items">
     <div class="container-md">
@@ -15,29 +14,27 @@
             <div class="new-items-List">
                 <div class="list">
                     @foreach($products_new as $product)
-                    <div class="product-item new-item card">
-                        <span class="flag">New</span>
-                        <div class="product-item-img">
-                            <a href="/p/{{ $product->id }}">
+                    <a href="">
+                        <div class="product-item new-item card">
+                            <span class="flag">New</span>
+                            <div class="product-item-img">
                                 @if($product->primaryImage)
                                 <img src="{{ Vite::asset('public/images/products/' . $product->primaryImage->image_url) }}"
                                     class="card-img-top" alt="...">
                                 @else
-                                <img src="{{ Vite::asset('public/images/products/default.png') }}" class="card-img-top"
+                                <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
                                     alt="...">
                                 @endif
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <a href="/p/{{ $product->id }}">
+                            </div>
+                            <div class="card-body">
                                 <h6 class="card-title fw-bold">{{ $product->name }}</h6>
-                            </a>
-                            <p class="card-text">{{ $product->getPrice() }}</p>
-                            <div data-value="{{ $product->id }}" class="heart-icon">
-                                <!-- <i class="fa-solid fa-cart-plus"></i> -->
+                                <p class="card-text">{{ $product->price }}</p>
+                                <div class="heart-icon">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     @endforeach
 
 
@@ -103,7 +100,7 @@
                     <img src="{{ Vite::asset('public/images/products/' . $product->primaryImage->image_url) }}"
                         class="card-img-top" alt="...">
                     @else
-                    <img src="{{ Vite::asset('public/images/products/default.png') }}" class="card-img-top" alt="...">
+                    <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top" alt="...">
                     @endif
 
                 </div>
