@@ -9,12 +9,6 @@
     margin-bottom: 20px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
 /* Cột */
 .col {
     flex: 1;

@@ -706,7 +706,7 @@ body {
 }
 
 .new-items-List .new-item:last-child {
-    margin-right: 0;
+    margin-right: 24px;
 }
 
 .product-item:hover .card-title {
