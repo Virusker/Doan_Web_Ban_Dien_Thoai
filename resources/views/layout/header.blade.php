@@ -135,7 +135,7 @@
                 <ul class="nav__list">
                     <div class="close-nav-header"><i class="fa-solid fa-xmark"></i></div>
                     <li class="has-hover nav__list-item hiden_tablet_mobile">
-                        <a href="">Tất cả</a>
+                        <a href="http://127.0.0.1:8000/">Tất cả</a>
                     </li>
                     @foreach($categories as $c)
                     <li class="has-hover nav__list-item hiden_tablet_mobile">

@@ -7,7 +7,7 @@
 
 @foreach($products as $p)
 
-<p>{{ $p->name }}</p>
+<p></p>
 
 @endforeach
 
@@ -52,8 +52,8 @@
                                       <p class="card-text">{{ $p->price }}</p>
                                       
                                       <div class="heart-icon">
-                                        <i class="fa-regular fa-heart"></i>
-                                        <i class="fa-solid fa-heart"></i>
+                                      <i class="fa-solid fa-cart-plus"></i>
+                                        <i class="fa-solid fa-cart-plus"></i>
                                       </div>
                                     </div>
                                 </div>
