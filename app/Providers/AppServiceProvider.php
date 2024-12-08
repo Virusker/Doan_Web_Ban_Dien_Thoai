@@ -22,11 +22,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('cart', function ($view) {
-            $view->with('c', "Category::all()");
-        });
+        // View::composer('cart', function ($view) {
+        //     $view->with('categories', Category::all());
+        // });
         //
 
-        View::share('key', 'value');
+        View::share('categories', Category::all());
     }
 }

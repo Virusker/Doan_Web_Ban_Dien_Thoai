@@ -29,6 +29,13 @@ class Product extends Model
         return $this->hasMany(ProductVariant::class);
     }
 
+    // get first price of product
+    public function getPrice()
+    {
+        $firstVariant = $this->variants->first();
+        return $firstVariant ? $firstVariant->price : null;
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class);

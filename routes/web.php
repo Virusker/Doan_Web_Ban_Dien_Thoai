@@ -37,6 +37,8 @@ Route::get('/cart',[CartController::class,'index']);
 
 Route::middleware(Authenticate::class)->group(function () {
 
+    Route::post('/add_cart', [CartController::class, 'add_cart']);
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     });
