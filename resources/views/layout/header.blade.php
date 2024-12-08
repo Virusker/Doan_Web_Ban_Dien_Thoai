@@ -1,24 +1,24 @@
 <header class="header">
-        <div class=" wide">
-            <div class="container navbar-top hiden_tablet_mobile">
-                <ul class="navbar-top__list">
-                    <li class="has-hover pointer navbar-top__list-item about-item">
-                        <!-- <a href="./about.html" class="item-content">
+    <div class=" wide">
+        <div class="container navbar-top hiden_tablet_mobile">
+            <ul class="navbar-top__list">
+                <li class="has-hover pointer navbar-top__list-item about-item">
+                    <!-- <a href="./about.html" class="item-content">
                             <i class="fa-solid fa-address-card"></i> 
                             Về Onie
                         </a> -->
-                    </li>
-                    <li class="has-hover pointer navbar-top__list-item">
-                        <div class="item-content">
-                            <i class="navbar__list-icon fa-regular fa-bell"></i>  
-                            Thông báo
-                        </div>
-                        <div class=" navbar__notify apper">
-                            <header class="navbar__notify-header">
-                                Thông báo mới nhận
-                            </header>
-                            <ul class="navbar__notify-list">
-                                <!-- <li class="navbar__notify-item">
+                </li>
+                <li class="has-hover pointer navbar-top__list-item">
+                    <div class="item-content">
+                        <i class="navbar__list-icon fa-regular fa-bell"></i>
+                        Thông báo
+                    </div>
+                    <div class=" navbar__notify apper">
+                        <header class="navbar__notify-header">
+                            Thông báo mới nhận
+                        </header>
+                        <ul class="navbar__notify-list">
+                            <!-- <li class="navbar__notify-item">
                                     <a href="" class="navbar__notify-link">
                                         <img src="https://pos.nvncdn.com/cba2a3-7534/ps/20240502_6LxRfHUCpE.jpeg" alt="" class="navbar__notify-img">
                                         <div class="navbar__notify-info">
@@ -27,7 +27,7 @@
                                         </div>
                                     </a>
                                 </li> -->
-                                <!-- <li class="navbar__notify-item">
+                            <!-- <li class="navbar__notify-item">
                                     <a href="" class="navbar__notify-link">
                                         <img src="https://pos.nvncdn.com/cba2a3-7534/ps/20240504_X3aTLqZ5cV.jpeg" alt="" class="navbar__notify-img">
                                         <div class="navbar__notify-info">
@@ -36,7 +36,7 @@
                                         </div>
                                     </a>
                                 </li> -->
-                                <!-- <li class="navbar__notify-item">
+                            <!-- <li class="navbar__notify-item">
                                     <a href="" class="navbar__notify-link">
                                         <img src="https://pos.nvncdn.com/cba2a3-7534/ps/20240428_eJeME1MRCF.jpeg" alt="" class="navbar__notify-img">
                                         <div class="navbar__notify-info">
@@ -45,67 +45,67 @@
                                         </div>
                                     </a>
                                 </li> -->
-                            </ul>
-                            <div class="navbar__notify-footer">
-                                <a href="" class="navbar__notify-footer-btn">Xem tất cả</a>
-                            </div>
+                        </ul>
+                        <div class="navbar__notify-footer">
+                            <a href="" class="navbar__notify-footer-btn">Xem tất cả</a>
                         </div>
-                    </li>
-                    <li class="navbar-top__list-item">
-                        <a href="" class="navbar__list-item-link">
-                            <i class="navbar__list-icon fa-regular fa-circle-question"></i>
-                            Hỗ trợ
-                        </a>
-                    </li>
-                    <li class="has-hover navbar-top__list-item">
-                        <div class="item-content">
-                            <i class="navbar__list-icon fa-solid fa-globe"></i>
-                            Tiếng việt
-                            <i class="navbar__list-icon fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="navbar__language apper">
-                            <p class="navbar__language-vn navbar__language--pointer">Tiếng Việt</p>
-                            <p class="navbar__language-en navbar__language--pointer">English</p>
-                        </div>
-                    </li>
-                    @if (Auth::check())
-                    <li class="has-hover navbar-top__list-item">
-                        <div class="item-content">
-                            <i class="navbar__list-icon fa-solid fa-globe"></i>
-                            {{ Auth::user()->name }}
-                            <i class="navbar__list-icon fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="navbar__language apper">
-                            <a href="/logout" class="navbar__language-vn navbar__language--pointer">logout</p>
-                            <!-- <p class="navbar__language-en navbar__language--pointer">English</p> -->
-                        </div>
-                    </li>
-                    @else
-                    <li class="navbar-top__list-item user-btn">            
-                        <a href="/login" class="navbar__list-item-link">Đăng nhập</a>    
-                    </li>
-                    @endif 
-                </ul>
-            </div>
-    
-            <!-- header with search -->
-            <div class="header-search-wrap">
-                <div class="container header-with-search">
-                    <div class="header__logo">
-                        <i class="fa-solid fa-bars bars-btn"></i>
-                        <a href="/">
-                            <img src="{{ Vite::asset('public/images/products/logo.jpg') }}" alt="" class="header__logo-img">
-                        </a>
-                        <i class="fa-regular fa-user user-btn"></i>
                     </div>
-                    <div class="header-with-search__section">
-                        <div class="header__search">
-                                <div class="header__search-input-wrap">
-                                    <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
-                                    <div class="header__search-history">
-                                        <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
-                                        <!-- <ul class="header__search-history-list"> -->
-                                            <!-- <Li class="header__search-history-item">
+                </li>
+                <li class="navbar-top__list-item">
+                    <a href="" class="navbar__list-item-link">
+                        <i class="navbar__list-icon fa-regular fa-circle-question"></i>
+                        Hỗ trợ
+                    </a>
+                </li>
+                <li class="has-hover navbar-top__list-item">
+                    <div class="item-content">
+                        <i class="navbar__list-icon fa-solid fa-globe"></i>
+                        Tiếng việt
+                        <i class="navbar__list-icon fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="navbar__language apper">
+                        <p class="navbar__language-vn navbar__language--pointer">Tiếng Việt</p>
+                        <p class="navbar__language-en navbar__language--pointer">English</p>
+                    </div>
+                </li>
+                @if (Auth::check())
+                <li class="has-hover navbar-top__list-item">
+                    <div class="item-content">
+                        <i class="navbar__list-icon fa-solid fa-globe"></i>
+                        {{ Auth::user()->name }}
+                        <i class="navbar__list-icon fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="navbar__language apper">
+                        <a href="/logout" class="navbar__language-vn navbar__language--pointer">logout</p>
+                            <!-- <p class="navbar__language-en navbar__language--pointer">English</p> -->
+                    </div>
+                </li>
+                @else
+                <li class="navbar-top__list-item user-btn">
+                    <a href="/login" class="navbar__list-item-link">Đăng nhập</a>
+                </li>
+                @endif
+            </ul>
+        </div>
+
+        <!-- header with search -->
+        <div class="header-search-wrap">
+            <div class="container header-with-search">
+                <div class="header__logo">
+                    <i class="fa-solid fa-bars bars-btn"></i>
+                    <a href="/">
+                        <img src="{{ Vite::asset('public/images/products/logo.jpg') }}" alt="" class="header__logo-img">
+                    </a>
+                    <i class="fa-regular fa-user user-btn"></i>
+                </div>
+                <div class="header-with-search__section">
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <!-- <ul class="header__search-history-list"> -->
+                                <!-- <Li class="header__search-history-item">
                                                 <a href="">Phụ kiện</a>
                                             </Li>
                                             <Li class="header__search-history-item">
@@ -127,69 +127,62 @@
                                                 <a href="">Đèn bàn</a>
                                             </Li>
                                         </ul> -->
-                                    </div>
-                                </div>
-                            <button class="header__search-btn">
-                                <i class="fa-solid fa-magnifying-glass header__search-btn-icon"></i>
-                            </button>
+                            </div>
                         </div>
-                        <div class="header-product hide-on-mobile-tablet">
-                        </div>
+                        <button class="header__search-btn">
+                            <i class="fa-solid fa-magnifying-glass header__search-btn-icon"></i>
+                        </button>
                     </div>
-                    
-                    <label for="check1" class="header__cart has-hover">
-                        <a href="/cart">
+                    <div class="header-product hide-on-mobile-tablet">
+                    </div>
+                </div>
+
+                <label for="check1" class="header__cart has-hover">
+                    <a href="/cart">
                         <input type="checkbox" class="cart-input" hidden id="check1">
                         <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                         <span class="cart-count" id="cart-count">0</span>
-                        </a>          
-                    </label>
-                </div>
+                    </a>
+                </label>
             </div>
-    
-            <nav class="nav-header translate-l container">
-                <ul class="nav__list">
-                    <div class="close-nav-header"><i class="fa-solid fa-xmark"></i></div>
-                    <li class="has-hover nav__list-item hiden_tablet_mobile">
-<<<<<<< HEAD
-                        <a href="http://127.0.0.1:8000/">Tất cả</a>
-=======
-                        <a href="/">Tất cả</a>
->>>>>>> 8f8ed66612d41604cfc02b928aba6a8391887a5f
-                    </li>
-                    @foreach($categories as $c)
-                    <li class="has-hover nav__list-item hiden_tablet_mobile">
-                        <a href="/products/{{ $c->id }}">{{ $c->name }}</a>
-                    </li>
-                    @endforeach
-                    <!--  -->
-                    <li class="nav__list-item hiden_tablet_mobile" style="border-right: 1px solid var(--white-color);">
-                        <a href="">Phụ kiện</a>    
-                    </li>
-
-                    <li class="nav__list-item active-tablet">
-                        <a href="./about.html">Trang trí</a>    
-                    </li>
-                    <li class="nav__list-item active-tablet">
-                        <a href="./product.html">Sản Phẩm</a>    
-                    </li>
-                    <li class="nav__list-item active-tablet">
-                        <a href="#">Thông báo</a>    
-                    </li>
-                    <li class="nav__list-item active-tablet">
-                        <a href="#">Ngôn ngữ</a>    
-                    </li>
-                    <li class="nav__list-item active-tablet">
-                        <a href="#">Cài đặt</a>    
-                    </li>
-                    <li class="nav__list-item active-tablet">
-                        <a href="#">Hỗ trợ</a>    
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </header>
-    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+
+        <nav class="nav-header translate-l container">
+            <ul class="nav__list">
+                <div class="close-nav-header"><i class="fa-solid fa-xmark"></i></div>
+                @foreach($categories as $c)
+                <li class="has-hover nav__list-item hiden_tablet_mobile">
+                    <a href="/products/{{ $c->id }}">{{ $c->name }}</a>
+                </li>
+                @endforeach
+                <!--  -->
+                <li class="nav__list-item hiden_tablet_mobile" style="border-right: 1px solid var(--white-color);">
+                    <a href="">Phụ kiện</a>
+                </li>
+
+                <li class="nav__list-item active-tablet">
+                    <a href="./about.html">Trang trí</a>
+                </li>
+                <li class="nav__list-item active-tablet">
+                    <a href="./product.html">Sản Phẩm</a>
+                </li>
+                <li class="nav__list-item active-tablet">
+                    <a href="#">Thông báo</a>
+                </li>
+                <li class="nav__list-item active-tablet">
+                    <a href="#">Ngôn ngữ</a>
+                </li>
+                <li class="nav__list-item active-tablet">
+                    <a href="#">Cài đặt</a>
+                </li>
+                <li class="nav__list-item active-tablet">
+                    <a href="#">Hỗ trợ</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
