@@ -4,7 +4,9 @@
     .hiden_tablet_mobile{
         display: none;
     }
-    
+    .hiden-pc{
+        display: block;
+    }
     .active-tablet{
         display: block;
     }

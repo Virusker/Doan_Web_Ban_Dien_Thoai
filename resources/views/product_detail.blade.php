@@ -17,7 +17,20 @@
         <!-- Cột 1: Hình ảnh -->
         <div class="col image">
             <img src="https://mcdn.coolmate.me/image/September2021/hang-dien-thoai-17.jpg" alt="Realme 2 Pro">
+
+            <div class="row thumbnail-gallery">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                    alt="Hình ảnh 1" class="thumbnail">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                    alt="Hình ảnh 2" class="thumbnail">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                    alt="Hình ảnh 3" class="thumbnail">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                    alt="Hình ảnh 4" class="thumbnail">
+            </div>
         </div>
+        <!-- Thêm 4 hình ảnh phía dưới -->
+
 
         <!-- Cột 2: Giá và khuyến mãi -->
         <div class="col promo">
@@ -27,7 +40,7 @@
             <div class="promo-list">
                 <h4>KHUYẾN MÃI</h4>
                 <ul>
-                    <li> Khách hàng sẽ được giảm 5% khi mua tại cửa hàng.</li>      
+                    <li> Khách hàng sẽ được giảm 5% khi mua tại cửa hàng.</li>
                 </ul>
                 <hr>
                 <p><strong>Trong hộp có:</strong> Sạc, Tai nghe, Sách hướng dẫn, Cây lấy sim, Ốp lưng</p>
@@ -36,18 +49,19 @@
                 <p>1 đổi 1 trong 1 tháng nếu lỗi kỹ thuật.</p>
             </div>
             <form action="" id="addcart-form">
-            <div class="mb-3">
-                <button class="btn minus">-</button>
+                <div class="mb-3">
+                    <button class="btn minus">-</button>
                     <input name="quantity" type="text" value="1" min="1" class="quantity">
-                <button class="btn plus">+</button>
-            </div>
+                    <button class="btn plus">+</button>
+                </div>
 
-            <select class="form-select" name="pv_id" id="pv-select">
-                 @foreach($product_variants as $pv)
-                <option data-price="{{$pv->price}}" value="{{ $pv->id }}">Màu: {{ $pv->color }}, Ram: {{ $pv->ram }}GB, Rom: {{ $pv->storage }}GB</option>
-                @endforeach
-            </select>
-            <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                <select class="form-select" name="pv_id" id="pv-select">
+                    @foreach($product_variants as $pv)
+                    <option data-price="{{$pv->price}}" value="{{ $pv->id }}">Màu: {{ $pv->color }}, Ram:
+                        {{ $pv->ram }}GB, Rom: {{ $pv->storage }}GB</option>
+                    @endforeach
+                </select>
+                <button class="btn btn-primary">Thêm vào giỏ hàng</button>
             </form>
         </div>
 
@@ -99,9 +113,48 @@
         <div class="product-description">
             <h3>Mô tả sản phẩm</h3>
             <p>
-                'Chiếc điện thoại thông minh này mang đến trải nghiệm hoàn hảo với thiết kế hiện đại và nhiều tính năng vượt trội. Thích hợp cho cả công việc và giải trí, đây là sự lựa chọn lý tưởng cho mọi người dùng.
+
+                <b>Thiết kế kiểu dáng:</b> Sang trọng, tối giản và hiện đại với khung viền kim loại (nhôm hoặc thép
+                không gỉ) và mặt lưng kính. <br><br>
+                <b>Màn hình:</b> Full màn hình với viền mỏng, thường sử dụng công nghệ Super Retina XDR OLED cho chất
+                lượng
+                hiển thị sắc nét. <br><br>
+                <b>Nút bấm:</b> Không có nút Home vật lý ở các dòng gần đây, thay vào đó là tính năng Face ID hoặc cảm
+                biến vân tay trong màn hình. <br><br>
+                <b>Cổng kết nối:</b> Sử dụng cổng Lightning đặc trưng, tuy nhiên các dòng mới nhất có thể chuyển sang
+                USB-C. <br><br>
+                <b>Màu sắc:</b> Thường có nhiều tùy chọn màu như bạc, xám không gian, vàng, hồng, xanh dương hoặc xanh
+                lá. <br><br>
+                2. Cấu Hình
+                Chip xử lý: Sử dụng chip A-series (như A16 Bionic), với hiệu suất mạnh mẽ, tối ưu hóa tốt cho cả hiệu
+                năng và tiết kiệm năng lượng.
+                Bộ nhớ: Đa dạng tùy chọn dung lượng lưu trữ (64GB, 128GB, 256GB, 512GB, hoặc 1TB).
+                RAM: 4GB đến 8GB tùy thuộc vào dòng sản phẩm.
+                Hệ điều hành: iOS - giao diện thân thiện, mượt mà và tối ưu hóa.
+                3. Camera
+                Số lượng camera:
+                iPhone cơ bản: 2 camera (1 góc rộng, 1 góc siêu rộng).
+                iPhone Pro/Pro Max: 3 camera (góc rộng, siêu rộng, telephoto) và cảm biến LiDAR.
+                Chất lượng ảnh:
+                Hỗ trợ chụp ảnh sắc nét trong điều kiện thiếu sáng.
+                Tính năng chụp chân dung xóa phông, zoom quang học, và quay video 4K, HDR.
+                Các tính năng nâng cao: Cinematic Mode, Night Mode, và ProRAW (cho người dùng chuyên nghiệp).
+                4. Pin và Sạc
+                Dung lượng pin: Đủ dùng cho một ngày với các tác vụ thông thường (như xem video, duyệt web, chụp ảnh).
+                Sạc: Hỗ trợ sạc nhanh và sạc không dây (MagSafe), thời gian sạc đầy thường dưới 2 tiếng với bộ sạc
+                nhanh.
+                Tuổi thọ pin: Tối ưu nhờ chip A-series và iOS.
+                5. Các Tính Năng Đặc Biệt
+                Bảo mật: Face ID hoặc cảm biến vân tay (Touch ID).
+                Âm thanh: Hỗ trợ âm thanh vòm Dolby Atmos, loa kép stereo cho chất lượng âm thanh sống động.
+                Kháng nước/bụi: Tiêu chuẩn IP68 (chịu được nước ở độ sâu 1-6 mét trong vòng 30 phút).
+                Kết nối: Wi-Fi 6, 5G, Bluetooth 5.3, và AirDrop.
+                Ecosystem: Tích hợp sâu với hệ sinh thái Apple (MacBook, Apple Watch, iPad...).
             </p>
         </div>
+
+
+
 
 
     </div>

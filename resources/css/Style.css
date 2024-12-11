@@ -21,6 +21,11 @@
     }
 }
 
+
+.hiden-pc {
+    display: none;
+}
+
 .carousel {}
 
 :root {
@@ -497,6 +502,7 @@ body {
     font-weight: 600;
     font-size: 16px;
     position: relative;
+    padding-left: 0;
 }
 
 .close-nav-header {
@@ -520,16 +526,17 @@ body {
 }
 
 
-.nav__list-item:hover {
-    background-color: #f467b08c;
-}
+.nav__list-item a:hover {
 
+    text-decoration: underline;
+}
 
 .nav__list-item a {
     color: var(--white-color);
     height: 100%;
     display: block;
     line-height: 40px;
+    text-decoration: none;
 }
 
 /* css login-signin */

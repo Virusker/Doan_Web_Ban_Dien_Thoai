@@ -147,37 +147,15 @@
             </div>
         </div>
 
-        <nav class="nav-header translate-l container">
+        <nav class="nav-header translate-l">
             <ul class="nav__list">
                 <div class="close-nav-header"><i class="fa-solid fa-xmark"></i></div>
+                <h3 class="title-category hiden-pc">Category</h3>
                 @foreach($categories as $c)
-                <li class="has-hover nav__list-item hiden_tablet_mobile">
+                <li class="has-hover nav__list-item">
                     <a href="/products/{{ $c->id }}">{{ $c->name }}</a>
                 </li>
                 @endforeach
-                <!--  -->
-                <li class="nav__list-item hiden_tablet_mobile" style="border-right: 1px solid var(--white-color);">
-                    <a href="">Phụ kiện</a>
-                </li>
-
-                <li class="nav__list-item active-tablet">
-                    <a href="./about.html">Trang trí</a>
-                </li>
-                <li class="nav__list-item active-tablet">
-                    <a href="./product.html">Sản Phẩm</a>
-                </li>
-                <li class="nav__list-item active-tablet">
-                    <a href="#">Thông báo</a>
-                </li>
-                <li class="nav__list-item active-tablet">
-                    <a href="#">Ngôn ngữ</a>
-                </li>
-                <li class="nav__list-item active-tablet">
-                    <a href="#">Cài đặt</a>
-                </li>
-                <li class="nav__list-item active-tablet">
-                    <a href="#">Hỗ trợ</a>
-                </li>
             </ul>
         </nav>
     </div>

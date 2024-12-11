@@ -4,6 +4,46 @@
 
 
 @section('content')
+<Section class="row banners">
+    <div class="banner col-md-12 col-12 " id="banner1">
+        <div id="demo" class="carousel slide banner-slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators carousel-btn-list">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner h-100">
+                <div class="carousel-item h-100 active">
+                    <img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/08/banner-quang-cao-dien-thoai_103211774.jpg"
+                        alt="Los Angeles" class="d-block w-100 h-100">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://pos.nvncdn.com/cba2a3-7534/bn/20240409_63dyFlGa.gif" alt="Chicago"
+                        class="d-block w-100 h-100">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://pos.nvncdn.com/cba2a3-7534/bn/20240425_aCR1k3kT.gif" alt="New York"
+                        class="d-block w-100 h-100">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="slide-btn carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="slide-btn carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+</Section>
+
+
 <Section class="new-items">
     <div class="container-md">
         <div class="section-title d-flex justify-content-between align-items-center mb-4 mt-4">
