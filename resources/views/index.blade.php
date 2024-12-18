@@ -22,11 +22,11 @@
                         alt="Los Angeles" class="d-block w-100 h-100">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="https://pos.nvncdn.com/cba2a3-7534/bn/20240409_63dyFlGa.gif" alt="Chicago"
+                    <img src="http://cdn.tgdd.vn/Files/2014/05/08/545039/Bannertop.jpg" alt="Chicago"
                         class="d-block w-100 h-100">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="https://pos.nvncdn.com/cba2a3-7534/bn/20240425_aCR1k3kT.gif" alt="New York"
+                    <img src="https://cdn.tgdd.vn/2023/06/banner/LTMS-1200-300-1200x300.png" alt="New York"
                         class="d-block w-100 h-100">
                 </div>
             </div>
