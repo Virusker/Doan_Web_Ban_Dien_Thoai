@@ -47,18 +47,114 @@ $('#addcart-form').on('submit', function(event) {
 
 $('.minus').on('click', function(e) {
     e.preventDefault();
-    var input = $(this).parent().find('input');
-
-    var quantity = $('.quantity').val();
+    var id = $(this).data('id');
+    var quantity = $('.quantity-' + id).val();
     if (quantity == 1) return;
 
-    $('.quantity').val(parseInt(quantity) - 1);
+    $('.quantity-' + id).val(parseInt(quantity) - 1).trigger("input");
 
 });
 $('.plus').on('click', function(e) {
     e.preventDefault();
-    var quantity = $('.quantity').val();
+    var id = $(this).data('id');
 
-    $('.quantity').val(parseInt(quantity) + 1);
+    var quantity = $('.quantity-' + id).val();
+
+    $('.quantity-' + id).val(parseInt(quantity) + 1).trigger("input");
+});
+let debounceTimer;
+
+$('.quantity').on("input", function() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        var id = $(this).data('id');
+        var oldQuantity = $(this).data("oq");
+        var quantity = $('.quantity-' + id).val();
+        var price = $('.product-price-' + id).data('price');
+
+        if (quantity < 1) {
+            $('.quantity').val(1);
+        }
+        // update total price
+        $('.total-price-' + id).text(parseFloat(price * quantity).toLocaleString("VI", {style:"currency", currency:"VND"}));
+        // update total price data
+        $('.total-price-' + id).data('price', price * quantity);
+
+        // update total price all
+        updateTotalPrice()
+
+        // update cart count
+        $('.cart-count').html(function(i, oldval) {
+            console.log(parseInt(oldval) - parseInt(oldQuantity) + parseInt(quantity));
+            return parseInt(oldval) - parseInt(oldQuantity) + parseInt(quantity);
+        });
+        $(this).data("oq", quantity);
+        // updateCart(id, quantity);
+        
+
+    }, 500);
+
 });
 
+$('.delete-btn').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+    var quantity = $('.quantity-' + id).val();
+
+
+    $('.cart-count').html(function(i, oldval) {
+        return parseInt(oldval) - parseInt(quantity);
+    });
+    $('.cart-item-' + id).remove();
+    updateTotalPrice();
+
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var formData = new FormData();
+    formData.append('pv_id', id);
+    $.ajax({
+        url: '/remove_cart',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        headers: {
+            'X-CSRF-TOKEN': csrfToken
+        },
+        success: function(data){
+            console.log('remove cart successfully');
+            // location.reload();
+        }
+    });
+});
+
+function updateCart(pid, quantity) {
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+    var formData = new FormData();
+    formData.append('pv_id', pid);
+    formData.append('quantity', quantity);
+
+    $.ajax({
+        url: '/update_cart',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        headers: {
+            'X-CSRF-TOKEN': csrfToken
+        },
+        success: function(data){
+            console.log('update cart successfully');
+        }
+    });
+}
+
+function updateTotalPrice() {
+    var totalPrice = 0;
+    $('.total-price').each(function() {
+        totalPrice += parseFloat($(this).text().replace(/[.₫]/g, ''));
+        
+    });
+    $('.total-price-all').text(totalPrice.toLocaleString("VI", {style:"currency", currency:"VND"}));
+}
+
+updateTotalPrice();

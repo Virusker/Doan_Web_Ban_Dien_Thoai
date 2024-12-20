@@ -22,9 +22,9 @@ class indexController extends Controller
         //     ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
         //     ->select('Products.*', 'Product_variants.*')
         //     ->get();
-        // $products_new = Product::all();
+        $products_new = Product::orderBy('created_at', 'desc')->limit(6)->get();
 
-        $products_new = array();
+        // $products_new = array();
         $products_popular = array();
 
         return view('index',['products_new' => $products_new,'products_popular' => $products_popular]);

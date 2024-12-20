@@ -38,6 +38,11 @@ Route::get('/cart',[CartController::class,'index']);
 Route::middleware(Authenticate::class)->group(function () {
 
     Route::post('/add_cart', [CartController::class, 'add_cart']);
+    Route::post('/remove_cart', [CartController::class, 'remove_cart']);
+    Route::post('/update_cart', [CartController::class, 'update_cart']);
+
+    Route::get('/checkout', [CartController::class, 'checkout']);
+    Route::post('/checkout', [CartController::class, 'checkout_post']);
 
     Route::get('/dashboard', function () {
         return view('dashboard');

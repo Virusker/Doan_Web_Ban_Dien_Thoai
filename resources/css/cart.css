@@ -61,7 +61,7 @@ tfoot {
     text-align: center;
     border: none;
     background-color: #f9f9f9;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .delete-btn {

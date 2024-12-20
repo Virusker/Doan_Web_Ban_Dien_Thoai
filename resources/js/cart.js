@@ -5,7 +5,9 @@ $(".heart-icon").click(function(){
 
 function addCart(product_id,quantity){
     var cartCount = $("#cart-count");
+
     $("#cart-count").text(parseInt(cartCount.text()) + quantity);
+    
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
         url: '/add_cart',

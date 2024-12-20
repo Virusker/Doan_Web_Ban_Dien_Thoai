@@ -14,7 +14,10 @@ npm install
 lệnh chạy dự án 
 ```bash
 composer run dev
+
 ```
+php artisan serve
+npm run dev
 
 - [mysqladmin](https://phpmyadmin.alwaysdata.com/).
 tkmk

@@ -35,8 +35,8 @@
                 <div class="col-xl-3 col-6 col-md-4">
                     <div class="product-item card">
                         <!-- <span class="flag">30% off</span> -->
+                        <a href="/p/{{ $p->id }}">
                         <div class="product-item-img">
-                            {{--
                                     @if($p->primaryImage)
                                     <img src="{{ Vite::asset('public/images/products/' . $p->primaryImage->image_url) }}"
                             class="card-img-top" alt="...">
@@ -44,8 +44,9 @@
                             <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
                                 alt="...">
                             @endif
-                            --}}
+                         
                         </div>
+                        </a>
                         <div class="card-body">
                             <h6 class="card-title fw-bold">{{ $p->name }}</h6>
 

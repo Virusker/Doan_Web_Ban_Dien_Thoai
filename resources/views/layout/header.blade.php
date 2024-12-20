@@ -141,7 +141,7 @@
                     <a href="/cart">
                         <input type="checkbox" class="cart-input" hidden id="check1">
                         <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                        <span class="cart-count" id="cart-count">0</span>
+                        <span class="cart-count" id="cart-count">{{ $cart_count }}</span>
                     </a>
                 </label>
             </div>

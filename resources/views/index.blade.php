@@ -58,6 +58,7 @@
                         <div class="product-item new-item card">
                             <span class="flag">New</span>
                             <div class="product-item-img">
+                            <a href="/p/{{ $product->id }}">
                                 @if($product->primaryImage)
                                 <img src="{{ Vite::asset('public/images/products/' . $product->primaryImage->image_url) }}"
                                     class="card-img-top" alt="...">
@@ -65,6 +66,7 @@
                                 <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
                                     alt="...">
                                 @endif
+                            </a>
                             </div>
                             <div class="card-body">
                                 <h6 class="card-title fw-bold">{{ $product->name }}</h6>
