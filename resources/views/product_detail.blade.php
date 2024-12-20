@@ -125,31 +125,28 @@
                 USB-C. <br><br>
                 <b>Màu sắc:</b> Thường có nhiều tùy chọn màu như bạc, xám không gian, vàng, hồng, xanh dương hoặc xanh
                 lá. <br><br>
-                2. Cấu Hình
-                Chip xử lý: Sử dụng chip A-series (như A16 Bionic), với hiệu suất mạnh mẽ, tối ưu hóa tốt cho cả hiệu
-                năng và tiết kiệm năng lượng.
-                Bộ nhớ: Đa dạng tùy chọn dung lượng lưu trữ (64GB, 128GB, 256GB, 512GB, hoặc 1TB).
-                RAM: 4GB đến 8GB tùy thuộc vào dòng sản phẩm.
-                Hệ điều hành: iOS - giao diện thân thiện, mượt mà và tối ưu hóa.
-                3. Camera
-                Số lượng camera:
-                iPhone cơ bản: 2 camera (1 góc rộng, 1 góc siêu rộng).
-                iPhone Pro/Pro Max: 3 camera (góc rộng, siêu rộng, telephoto) và cảm biến LiDAR.
-                Chất lượng ảnh:
+
+                <b>Chip xử lý:</b> Sử dụng chip A-series (như A16 Bionic), với hiệu suất mạnh mẽ, tối ưu hóa tốt cho cả
+                hiệu năng và tiết kiệm năng lượng. <br><br>
+                <b>Bộ nhớ:</b> Đa dạng tùy chọn dung lượng lưu trữ (64GB, 128GB, 256GB, 512GB, hoặc 1TB).
+                RAM: 4GB đến 8GB tùy thuộc vào dòng sản phẩm. <br> <br>
+
+                <b>Chất lượng ảnh:</b>
                 Hỗ trợ chụp ảnh sắc nét trong điều kiện thiếu sáng.
-                Tính năng chụp chân dung xóa phông, zoom quang học, và quay video 4K, HDR.
-                Các tính năng nâng cao: Cinematic Mode, Night Mode, và ProRAW (cho người dùng chuyên nghiệp).
-                4. Pin và Sạc
-                Dung lượng pin: Đủ dùng cho một ngày với các tác vụ thông thường (như xem video, duyệt web, chụp ảnh).
-                Sạc: Hỗ trợ sạc nhanh và sạc không dây (MagSafe), thời gian sạc đầy thường dưới 2 tiếng với bộ sạc
-                nhanh.
-                Tuổi thọ pin: Tối ưu nhờ chip A-series và iOS.
-                5. Các Tính Năng Đặc Biệt
-                Bảo mật: Face ID hoặc cảm biến vân tay (Touch ID).
-                Âm thanh: Hỗ trợ âm thanh vòm Dolby Atmos, loa kép stereo cho chất lượng âm thanh sống động.
-                Kháng nước/bụi: Tiêu chuẩn IP68 (chịu được nước ở độ sâu 1-6 mét trong vòng 30 phút).
-                Kết nối: Wi-Fi 6, 5G, Bluetooth 5.3, và AirDrop.
-                Ecosystem: Tích hợp sâu với hệ sinh thái Apple (MacBook, Apple Watch, iPad...).
+                Tính năng chụp chân dung xóa phông, zoom quang học, và quay video 4K, HDR. <br> <br>
+
+                <b>Các tính năng nâng cao:</b> Cinematic Mode, Night Mode, và ProRAW (cho người dùng chuyên nghiệp).
+                <br> <br>
+                <b>Pin và Sạc Dung lượng pin:</b> Đủ dùng cho một ngày với các tác vụ thông thường (như xem video,
+                duyệt web, chụp ảnh). <br> <br>
+
+                <b>Đặc biệt Bảo mật:</b> Face ID hoặc cảm biến vân tay (Touch ID). <br> <br>
+                <b>Âm thanh:</b> Hỗ trợ âm thanh vòm Dolby Atmos,
+                loa kép stereo cho chất lượng âm thanh sống động. <br> <br>
+
+                <b>Kháng nước/bụi:</b> Tiêu chuẩn IP68 (chịu được nước ở
+                độ sâu 1-6 mét trong vòng 30 phút). Kết nối: Wi-Fi 6, 5G, Bluetooth 5.3, và AirDrop. Ecosystem: Tích
+                hợp sâu với hệ sinh thái Apple (MacBook, Apple Watch, iPad...).
             </p>
         </div>
 
