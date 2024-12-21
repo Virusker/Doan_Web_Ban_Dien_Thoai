@@ -33,10 +33,10 @@ Route::get('/products/{category_id?}',[ProductsController::class,'index']);
 
 Route::get('/p/{product_id?}',[ProductsController::class,'product_detail']);
 
-Route::get('/cart',[CartController::class,'index']);
 
 Route::middleware(Authenticate::class)->group(function () {
 
+    Route::get('/cart',[CartController::class,'index']);
     Route::post('/add_cart', [CartController::class, 'add_cart']);
     Route::post('/remove_cart', [CartController::class, 'remove_cart']);
     Route::post('/update_cart', [CartController::class, 'update_cart']);
@@ -80,6 +80,9 @@ Route::middleware(AdminAuthenticate::class)->group(function () {
     Route::get('/admin/del_product_variant/{product_variant_id?}', [AdminController::class, 'del_product_variant']);
     Route::get('/admin/update_product_variant/{product_variant_id?}', [AdminController::class, 'update_product_variant']);
     Route::post('/admin/update_product_variant', [AdminController::class, 'update_product_variant_post']);
+
+    Route::get('/admin/order', [AdminController::class, 'orders']);
+    Route::get('/admin/order_detail/{order_id?}', [AdminController::class, 'order_detail']);
 
     Route::get('/admin/logout', [AdminLoginController::class, 'logout']);
 

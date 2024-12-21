@@ -181,7 +181,7 @@
                 Product Variants
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 {{ $currentUrl == 'admin/customers' ? 'active' : '' }}" href="#">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Customers
@@ -198,7 +198,7 @@
                 <svg class="bi"><use xlink:href="#puzzle"/></svg>
                 Integrations
               </a>
-            </li>
+            </li> -->
           </ul>
 
           <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
@@ -237,12 +237,12 @@
           <hr class="my-3">
 
           <ul class="nav flex-column mb-auto">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
                 Settings
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="/admin/logout">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
@@ -257,7 +257,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
+        <!-- <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
@@ -266,7 +266,7 @@
             <svg class="bi"><use xlink:href="#calendar3"/></svg>
             This week
           </button>
-        </div>
+        </div> -->
       </div>
 
     @yield('content')

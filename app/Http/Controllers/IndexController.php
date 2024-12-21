@@ -22,10 +22,26 @@ class indexController extends Controller
         //     ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
         //     ->select('Products.*', 'Product_variants.*')
         //     ->get();
-        $products_new = Product::orderBy('created_at', 'desc')->limit(6)->get();
+        // $products_new = Product::orderBy('created_at', 'desc')->limit(8)->get();
+        $products_new = DB::table('Products')
+            ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
+            ->join('Images', 'Products.id', '=', 'Images.product_id')
+            ->select('Products.*', 'Product_variants.*', 'Images.*')
+            ->orderBy('Products.created_at', 'desc')
+            ->limit(8)
+            ->get();
 
         // $products_new = array();
-        $products_popular = array();
+        // $products_popular = array();
+        $products_popular = DB::table('Products')
+            ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
+            ->join('Images', 'Products.id', '=', 'Images.product_id')
+            ->join('Order_details', 'Product_variants.id', '=', 'Order_details.product_variant_id')
+            ->where('Images.is_primary', true)
+            ->select('Products.*', 'Product_variants.*', 'Images.*')
+            ->orderBy('Order_details.quantity', 'desc')
+            ->limit(8)
+            ->get();
 
         return view('index',['products_new' => $products_new,'products_popular' => $products_popular]);
     }

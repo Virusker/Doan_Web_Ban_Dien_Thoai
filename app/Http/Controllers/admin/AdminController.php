@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductVariant;
 use App\Models\Image;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -217,7 +218,12 @@ class AdminController extends Controller
 
     function product_variants(){
         // list of product variants sorted by product_id
-        $product_variants = ProductVariant::orderBy('product_id')->get();
+        // $product_variants = ProductVariant::orderBy('product_id')->get();
+        $product_variants = DB::table('Product_variants')
+        ->join('Products', 'Product_variants.product_id', '=', 'Products.id')
+        ->select('Product_variants.*', 'Products.name as product_name')
+        ->orderBy('product_id')
+        ->get();
 
         // $product_variants = ProductVariant::all();
         return view('admin.product_variants',['product_variants' => $product_variants]);
@@ -314,4 +320,33 @@ class AdminController extends Controller
 
         return redirect('/admin/product_variants');
     }
+    function orders(){
+        $orders = DB::table('Orders')
+        ->get();
+
+        return view('admin.orders',['orders' => $orders]);
+    }
+    function order_detail(Request $request,$order_id = null){
+        if ($order_id == null){
+            return redirect('/admin/orders');
+        }
+        $order = DB::table('Orders')
+        ->where('id', $order_id)
+        ->first();
+
+        $order_details = DB::table('Order_details')
+        ->join('Product_variants', 'Order_details.product_variant_id', '=', 'Product_variants.id')
+        ->join('Products', 'Product_variants.product_id', '=', 'Products.id')
+        ->where('Order_details.order_id', $order_id)
+        ->select(
+            'Order_details.price as order_price',
+            'Order_details.quantity as order_quantity',
+            'Product_variants.*',
+            'Products.name as product_name'
+        )
+        ->get();
+
+        return view('admin.order_detail',['order' => $order,'order_details' => $order_details]);
+    }
+
 }

@@ -10,13 +10,13 @@
 
 <div class="product-details">
     <!-- Tiêu đề sản phẩm -->
-    <h1>{{$product->name}}</h1>
+    <h1>{{ $product->name }}</h1>
 
     <!-- Hàng đầu tiên -->
     <div class="row">
         <!-- Cột 1: Hình ảnh -->
         <div class="col image">
-            <img src="https://mcdn.coolmate.me/image/September2021/hang-dien-thoai-17.jpg" alt="Realme 2 Pro">
+            <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}" alt="{{$product->name}}">
 
             <div class="row thumbnail-gallery">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
@@ -35,7 +35,7 @@
         <!-- Cột 2: Giá và khuyến mãi -->
         <div class="col promo">
 
-            <div class="price">{{ number_format($product->getPrice(), 0, ',', '.') }} ₫</div>
+            <div class="price">{{ number_format($product->price, 0, ',', '.') }} ₫</div>
             <hr>
             <div class="promo-list">
                 <h4>KHUYẾN MÃI</h4>
@@ -50,9 +50,9 @@
             </div>
             <form action="" id="addcart-form">
                 <div class="mb-3">
-                    <button class="btn minus">-</button>
-                    <input name="quantity" type="text" value="1" min="1" class="quantity">
-                    <button class="btn plus">+</button>
+                    <button data-id="{{ $product->id }}" class="btn minus">-</button>
+                    <input style="width:50px;" data-id="{{ $product->id }}" name="quantity" type="text" value="1" min="1" class="quantity-{{ $product->id }}">
+                    <button data-id="{{ $product->id }}" class="btn plus">+</button>
                 </div>
 
                 <select class="form-select" name="pv_id" id="pv-select">
@@ -61,12 +61,16 @@
                         {{ $pv->ram }}GB, Rom: {{ $pv->storage }}GB</option>
                     @endforeach
                 </select>
+                @if (auth()->check())
                 <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                @else
+                <a href="/login" class="btn btn-primary">Đăng nhập để mua hàng</a>
+                @endif
             </form>
         </div>
 
         <!-- Cột 3: Thông số kỹ thuật -->
-        <div class="col specs">
+        <!-- <div class="col specs">
             <h3>Thông số kỹ thuật</h3>
             <table>
                 <tr>
@@ -106,7 +110,7 @@
                     <td>3500 mAh</td>
                 </tr>
             </table>
-        </div>
+        </div> -->
 
 
         <!-- Mô tả sản phẩm -->

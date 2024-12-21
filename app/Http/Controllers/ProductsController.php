@@ -37,7 +37,13 @@ class ProductsController extends Controller
 
     public function product_detail(Request $request,$product_id = null){
         // $p = DB::table('Products')->where('id', $product_id)->first();
-        $product = Product::find($product_id);
+        // $product = Product::find($product_id);
+        $product = DB::table('Products')
+        ->join('Images', 'Products.id', '=', 'Images.product_id')
+        ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
+        ->where('Products.id', $product_id)
+        ->select('Products.*', 'Images.*', 'Product_variants.*')
+        ->first();
 
         $product_variants = DB::table('Product_variants')
         ->where('product_id', $product_id)

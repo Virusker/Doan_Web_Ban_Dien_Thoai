@@ -57,8 +57,9 @@ $('.minus').on('click', function(e) {
 $('.plus').on('click', function(e) {
     e.preventDefault();
     var id = $(this).data('id');
-
+    
     var quantity = $('.quantity-' + id).val();
+    console.log(id, quantity);
 
     $('.quantity-' + id).val(parseInt(quantity) + 1).trigger("input");
 });
@@ -74,6 +75,7 @@ $('.quantity').on("input", function() {
 
         if (quantity < 1) {
             $('.quantity').val(1);
+           
         }
         // update total price
         $('.total-price-' + id).text(parseFloat(price * quantity).toLocaleString("VI", {style:"currency", currency:"VND"}));
@@ -89,7 +91,7 @@ $('.quantity').on("input", function() {
             return parseInt(oldval) - parseInt(oldQuantity) + parseInt(quantity);
         });
         $(this).data("oq", quantity);
-        // updateCart(id, quantity);
+        updateCart(id, quantity);
         
 
     }, 500);

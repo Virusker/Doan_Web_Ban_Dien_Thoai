@@ -42,11 +42,12 @@
       </div>
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Địa chỉ thanh toán</h4>
-        <form class="needs-validation" novalidate>
+        <form action="/checkout" method="post" class="needs-validation" novalidate>
+        @csrf
           <div class="row g-3">
             <div class="col-sm-12">
               <label for="firstName" class="form-label">Họ Tên</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input name="c_name" type="text" class="form-control" id="firstName" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Vui lòng điền họ và tên.
               </div>
@@ -54,7 +55,7 @@
 
             <div class="col-sm-12">
               <label for="lastName" class="form-label">Số điện thoại</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input name="c_phone" type="text" class="form-control" id="lastName" placeholder="" value="" required>
               <div class="invalid-feedback">
                 Vui lòng điền số điện thoại.
               </div>
@@ -62,54 +63,13 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Địa chỉ</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <input name="c_address" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
               <div class="invalid-feedback">
                 Vui lòng điền số điện thoại.
               </div>
             </div>
 
-            <!-- <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div> -->
           </div>
-
-          <!-- <hr class="my-4">
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div> -->
 
           <hr class="my-4">
 
@@ -117,52 +77,15 @@
 
           <div class="my-3">
             <div class="form-check">
-              <input id="COD" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <input name="payment" id="COD" value="COD" name="paymentMethod" type="radio" class="form-check-input" checked required>
               <label class="form-check-label" for="COD">Thanh toán trực tiếp(COD)</label>
             </div>
             <div class="form-check">
-              <input id="Online" name="paymentMethod" type="radio" class="form-check-input" required>
+              <input name="payment" id="Online" value = "ONLINE" name="paymentMethod" type="radio" class="form-check-input" required>
               <label class="form-check-label" for="Online">Online</label>
             </div>
           </div>
-
-          <!-- <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-body-secondary">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div> -->
-
           <hr class="my-4">
-
           <button class="w-100 btn btn-primary btn-lg" type="submit">Thanh Toán</button>
           <br><br>
         </form>

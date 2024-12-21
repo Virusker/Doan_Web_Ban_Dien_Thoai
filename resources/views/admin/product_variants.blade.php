@@ -22,7 +22,7 @@
             @foreach ($product_variants as $pv)
             <tr>
                 <td>{{ $pv->id }}</td>
-                <td>{{ $pv->product->name }}</td>
+                <td>{{ $pv->product_name }}</td>
                 <td>{{ $pv->price }}</td>
                 <td>{{ $pv->color }}</td>
                 <td>{{ $pv->ram }}</td>
@@ -42,5 +42,6 @@
           </tbody>
         </table>
       </div>
+      
 
 @endsection      

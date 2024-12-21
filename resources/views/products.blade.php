@@ -52,10 +52,10 @@
 
                             <p class="card-text">{{ $p->price }}</p>
 
-                            <div class="heart-icon">
+                            <!-- <div class="heart-icon">
                                 <i class="fa-solid fa-cart-plus"></i>
                                 <i class="fa-solid fa-cart-plus"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

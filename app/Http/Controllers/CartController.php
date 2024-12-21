@@ -166,5 +166,47 @@ class CartController extends Controller
             'carts' => $carts
         ]);
     }
+    public function checkout_post(Request $request){
+        
+        // c_name c_phone c_address payment 
+        $c_name = $request->input('c_name');
+        $c_phone = $request->input('c_phone');
+        $c_address = $request->input('c_address');
+        $payment = $request->input('payment');
 
+        $orders = DB::table('Orders')->insertGetId([
+            'user_id' => Auth::user()->id,
+            'customer_name' => $c_name,
+            'customer_phone' => $c_phone,
+            'shipping_address' => $c_address,
+            'payment_method' => $payment,
+            'status' => 1
+        ]);
+
+        $carts = DB::table('Carts')
+            ->join('Product_variants', 'Carts.product_variant_id', '=', 'Product_variants.id')
+            ->join('Products', 'Product_variants.product_id', '=', 'Products.id')
+            ->where('Carts.user_id', Auth::user()->id)
+            ->select(
+                'Carts.quantity as cart_quantity',
+                'Product_variants.*', 
+                'Products.name as product_name'
+            )
+            ->get();
+        
+        foreach ($carts as $cart) {
+            DB::table('Order_details')->insert([
+                'order_id' => $orders,
+                'product_variant_id' => $cart->id,
+                'quantity' => $cart->cart_quantity,
+                'price' => $cart->price
+            ]);
+        }
+
+        DB::table('Carts')
+        ->where('user_id', Auth::user()->id)
+        ->delete();
+
+        return view('complete');
+    }
 }

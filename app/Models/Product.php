@@ -32,8 +32,8 @@ class Product extends Model
     // get first price of product
     public function getPrice()
     {
-        $firstVariant = $this->variants->first();
-        return $firstVariant ? $firstVariant->price : null;
+        $firstVariant = $this->variants()->first();
+        return $firstVariant ? $firstVariant->price : 0;
     }
 
     public function images()
