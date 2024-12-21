@@ -24,12 +24,14 @@ class indexController extends Controller
         //     ->get();
         // $products_new = Product::orderBy('created_at', 'desc')->limit(8)->get();
         $products_new = DB::table('Products')
-            ->join('Product_variants', 'Products.id', '=', 'Product_variants.product_id')
             ->join('Images', 'Products.id', '=', 'Images.product_id')
-            ->select('Products.*', 'Product_variants.*', 'Images.*')
+            ->where('Images.is_primary', true)
+            ->select('Products.*', 'Images.*')
+            ->addSelect(DB::raw('(SELECT price FROM Product_variants WHERE Product_variants.product_id = Products.id LIMIT 1) as representative_price'))
             ->orderBy('Products.created_at', 'desc')
             ->limit(8)
             ->get();
+
 
         // $products_new = array();
         // $products_popular = array();

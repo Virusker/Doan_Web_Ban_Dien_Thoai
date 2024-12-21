@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-xl-3 col-6 col-md-4">
                     <div class="footer-1 w-100">
-                        <img class="footer-logo" src="{{ Vite::asset('public/images/products/default.png') }}" alt="">
+                        <!-- <img class="footer-logo" src="{{ Vite::asset('public/images/products/default.png') }}" alt=""> -->
                         <ul class="footer-list">
                             <li>Gọi mua: 1900 232 460 (8:00 - 21:30)</li>
                             <li>Khiếu nại: 1800.1062 (8:00 - 21:30)</li>

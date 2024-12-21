@@ -4,6 +4,8 @@
 
 
 @section('content')
+
+
 <Section class="row banners">
     <div class="banner col-md-12 col-12 " id="banner1">
         <div id="demo" class="carousel slide banner-slide" data-bs-ride="carousel">
@@ -54,29 +56,30 @@
             <div class="new-items-List">
                 <div class="list">
                     @foreach($products_new as $product)
-                    <a href="">
-                        <div class="product-item new-item card">
-                            <span class="flag">New</span>
-                            <div class="product-item-img">
-                            <a href="/p/{{ $product->id }}">
-                                @if($product->image_url)
-                                <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}"
-                                    class="card-img-top" alt="...">
-                                @else
-                                <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
-                                    alt="...">
-                                @endif
-                            </a>
-                            </div>
-                            <div class="card-body">
-                                <h6 class="card-title fw-bold">{{ $product->name }}</h6>
-                                <p class="card-text">{{ number_format($product->price, 0, ',', '.') }} ₫</p>
-                                <!-- <div class="heart-icon">
+                    <div class="product-item new-item card">
+                        <span class="flag">New</span>
+                        <div class="product-item-img">
+                        <a href="/p/{{ $product->product_id }}">
+                            @if($product->image_url)
+                            <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}"
+                                class="card-img-top" alt="...">
+                            @else
+                            <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
+                                alt="...">
+                            @endif
+                        </a>
+                        </div>
+                        <a style="text-decoration:none;" href="/p/{{ $product->id }}">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">{{ $product->name }}</h6>
+                            <p class="card-text">{{ number_format($product->representative_price, 0, ',', '.') }} ₫</p>
+                            <!-- <div class="heart-icon">
                                     <i class="fa-solid fa-cart-plus"></i>
                                 </div> -->
                             </div>
                         </div>
-                    </a>
+                        </a>
+                    
                     @endforeach
                 </div>
             </div>
@@ -99,16 +102,17 @@
         <div class="col-xl-3 col-6 col-md-4">
             <div class="product-item card">
                 <span class="flag">HOT</span>
-
                 <div class="product-item-img">
+                <a style="text-decoration:none;" href="/p/{{ $product->id }}">
                 @if($product->image_url)
                     <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}"
                         class="card-img-top" alt="...">
                     @else
                     <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top" alt="...">
                     @endif
-
+                </a>
                 </div>
+                <a style="text-decoration:none;" href="/p/{{ $product->id }}">
                 <div class="card-body">
                     <h6 class="card-title fw-bold">{{ $product->name }}</h6>
                     <p class="card-text">{{ number_format($product->price, 0, ',', '.') }} ₫</p>
@@ -117,6 +121,7 @@
                         <i class="fa-solid fa-cart-plus"></i>
                     </div> -->
                 </div>
+                </a>
             </div>
         </div>
         @endforeach

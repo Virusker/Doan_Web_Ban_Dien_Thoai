@@ -39,11 +39,11 @@
             Vui lòng nhập mật khẩu.
         </div>
     </div>
-    <label class="py-2">
+    <!-- <label class="py-2">
         <input type="checkbox" id="sign-in-remember" required class="d-inline">
         <span class="label-body">Lưu tài khoản</span>
         <span class="label-body"><a href="#" class="fw-bold">Quên mật khẩu:</a></span>
-    </label>
+    </label> -->
     <br>
     <label for="">
         <span>
