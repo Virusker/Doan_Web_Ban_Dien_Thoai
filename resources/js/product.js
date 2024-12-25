@@ -103,7 +103,7 @@ $('.delete-btn').on('click', function(e) {
     var id = $(this).data('id');
     var quantity = $('.quantity-' + id).val();
 
-
+    
     $('.cart-count').html(function(i, oldval) {
         return parseInt(oldval) - parseInt(quantity);
     });
