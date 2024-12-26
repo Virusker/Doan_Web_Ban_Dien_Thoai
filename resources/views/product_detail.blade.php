@@ -19,14 +19,20 @@
             <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}" alt="{{$product->name}}">
 
             <div class="row thumbnail-gallery">
-                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                @foreach($images as $image)
+                <img src="{{ Vite::asset('public/images/products/' . $image->image_url) }}" alt="{{$product->name}}"
+                    class="thumbnail">
+                @endforeach
+
+
+                <!-- <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 1" class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 2" class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 3" class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
-                    alt="Hình ảnh 4" class="thumbnail">
+                    alt="Hình ảnh 4" class="thumbnail"> -->
             </div>
         </div>
         <!-- Thêm 4 hình ảnh phía dưới -->
