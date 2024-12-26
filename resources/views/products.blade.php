@@ -18,8 +18,8 @@
                 <h5 class="fw-bold">Danh Mục</h5>
                 <ul class="category-list">
                     <li class="active"><a href="./product.html">Tất cả</a></li>
-                    <li><a href="">Thịnh hành</a></li>
-                    <li><a href="">Hàng mới</a></li>
+                    <!-- <li><a href="">Thịnh hành</a></li>
+                    <li><a href="">Hàng mới</a></li> -->
 
 
                 </ul>
@@ -37,9 +37,9 @@
                         <!-- <span class="flag">30% off</span> -->
                         <a href="/p/{{ $p->id }}">
                         <div class="product-item-img">
-                                    @if($p->primaryImage)
-                                    <img src="{{ Vite::asset('public/images/products/' . $p->primaryImage->image_url) }}"
-                            class="card-img-top" alt="...">
+                        @if($p->image_url)
+                            <img src="{{ Vite::asset('public/images/products/' . $p->image_url) }}"
+                                class="card-img-top" alt="...">
                             @else
                             <img src="{{ Vite::asset('public/images/products/default.jpg') }}" class="card-img-top"
                                 alt="...">
@@ -50,7 +50,7 @@
                         <div class="card-body">
                             <h6 class="card-title fw-bold">{{ $p->name }}</h6>
 
-                            <p class="card-text">{{ $p->price }}</p>
+                            <p class="card-text">{{ $p->representative_price }}</p>
 
                             <!-- <div class="heart-icon">
                                 <i class="fa-solid fa-cart-plus"></i>
@@ -63,17 +63,22 @@
 
 
             </div>
+
+        
+            @if ($tp > 1)
             <div class="pagination w-100">
+                
                 <ul class="pagination-list d-flex">
-                    <li class="active">1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>...</li>
-                    <li>next</li>
+                    @for($i = 1; $i <= $tp; $i++)
+                    <li class="{{ $i==$page?'active':'' }}">
+                        <a style="text-decoration:none;" href="?page={{ $i }}">
+                        {{ $i }}
+                        </a>
+                    </li>
+                    @endfor
                 </ul>
             </div>
+            @endif
         </div>
     </div>
 </section>

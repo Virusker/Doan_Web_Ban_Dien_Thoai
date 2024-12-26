@@ -111,13 +111,18 @@ class AdminController extends Controller
 
         $product = Product::where('name', $request->name)->first();
 
-        if(!$product){
-            $product = new Product;
-            $product->name = $request->name;
-            $product->description = $request->description;
-            $product->category_id = $request->category;
-            $product->save();
+        if ($product){
+            return redirect('/admin/products');
         }
+
+   
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->category_id = $request->category;
+        $product->save();
+
+        $product_id = $product->id;
 
         // add_product_image
 
@@ -125,7 +130,7 @@ class AdminController extends Controller
             $imageprimaryName = pathinfo($request->imageprimary->getClientOriginalName(), PATHINFO_FILENAME) . '_' . time().'.'.$request->imageprimary->extension();
             $request->imageprimary->move(public_path('images/products'), $imageprimaryName);      
             $image = new Image;
-            $image->product_id = $request->product_id;
+            $image->product_id = $product_id;
             $image->image_url = $imageprimaryName;
             $image->is_primary = true;
             $image->save();
@@ -137,7 +142,7 @@ class AdminController extends Controller
                 $imageName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . time().'.'.$image->extension();
                 $image->move(public_path('images/products'), $imageName);      
                 $image = new Image;
-                $image->product_id = $request->product_id;
+                $image->product_id = $product_id;
                 $image->image_url = $imageName;
                 $image->is_primary = false;
                 $image->save();
@@ -219,6 +224,11 @@ class AdminController extends Controller
     function product_variants(){
         // list of product variants sorted by product_id
         // $product_variants = ProductVariant::orderBy('product_id')->get();
+        // paginate
+        $page = 1;
+        
+
+
         $product_variants = DB::table('Product_variants')
         ->join('Products', 'Product_variants.product_id', '=', 'Products.id')
         ->select('Product_variants.*', 'Products.name as product_name')
@@ -307,16 +317,16 @@ class AdminController extends Controller
 
         // update product variant image
 
-        $images = Image::find($request->product_variant_id);
+        // $images = Image::find($request->product_variant_id);
 
-        if ($images){
-            $imageprimaryName = pathinfo($request->imageprimary->getClientOriginalName(), PATHINFO_FILENAME) . '_' . time().'.'.$request->imageprimary->extension();
-            $request->imageprimary->move(public_path('images/products'), $imageprimaryName);
+        // if ($images){
+        //     $imageprimaryName = pathinfo($request->imageprimary->getClientOriginalName(), PATHINFO_FILENAME) . '_' . time().'.'.$request->imageprimary->extension();
+        //     $request->imageprimary->move(public_path('images/products'), $imageprimaryName);
             
-            $images->name = $imageprimaryName;
-            $images->is_primary = true;
-            $images->save();
-        }
+        //     $images->name = $imageprimaryName;
+        //     $images->is_primary = true;
+        //     $images->save();
+        // }
 
         return redirect('/admin/product_variants');
     }

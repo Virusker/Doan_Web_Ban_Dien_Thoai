@@ -28,7 +28,7 @@
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                   <a class="btn btn-primary" href="/admin/add_product_variant/{{ $product->id }}">thêm biến thể</a>
                   <a class="btn btn-warning" href="/admin/update_product/{{ $product->id }}">sửa</a>
-                  <a class="btn btn-danger" href="/admin/del_product/{{ $product->id }}/delete">xóa</a>
+                  <a class="btn btn-danger" href="/admin/del_product/{{ $product->id }}">xóa</a>
                 </div>
               </td>
 

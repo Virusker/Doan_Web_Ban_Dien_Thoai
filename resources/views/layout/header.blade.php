@@ -101,7 +101,9 @@
                 <div class="header-with-search__section">
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                        <form action="/search" method="get">
+                                <input name="q" type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                            </form>
                             <div class="header__search-history">
                                 <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
                                 <!-- <ul class="header__search-history-list"> -->
