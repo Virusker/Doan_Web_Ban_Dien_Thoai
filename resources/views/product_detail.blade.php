@@ -19,8 +19,8 @@
             <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}" alt="{{$product->name}}">
 
             <div class="row thumbnail-gallery">
-                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
-                    alt="Hình ảnh 1" class="thumbnail">
+                <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}" alt="{{$product->name}}"
+                    class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 2" class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
@@ -51,7 +51,8 @@
             <form action="" id="addcart-form">
                 <div class="mb-3">
                     <button data-id="{{ $product->id }}" class="btn minus">-</button>
-                    <input style="width:50px;" data-id="{{ $product->id }}" name="quantity" type="text" value="1" min="1" class="quantity-{{ $product->id }}">
+                    <input style="width:50px;" data-id="{{ $product->id }}" name="quantity" type="text" value="1"
+                        min="1" class="quantity-{{ $product->id }}">
                     <button data-id="{{ $product->id }}" class="btn plus">+</button>
                 </div>
 

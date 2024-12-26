@@ -3,8 +3,8 @@
 @section('title', 'Home')
 
 @section('content')
-    <h2>admin</h2>
-    <p>This is the content of the welcome page.</p>
+<h2>Xin chào ADMIN của tôi</h2>
+<p>Hôm nay bạn có gì mới không ?</p>
 
-    
+
 @endsection
