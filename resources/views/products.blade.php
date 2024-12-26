@@ -50,7 +50,7 @@
                         <div class="card-body">
                             <h6 class="card-title fw-bold">{{ $p->name }}</h6>
 
-                            <p class="card-text">{{ $p->representative_price }}</p>
+                            <p class="card-text">{{ number_format($p->representative_price, 0, ',', '.') }} ₫</p>
 
                             <!-- <div class="heart-icon">
                                 <i class="fa-solid fa-cart-plus"></i>
