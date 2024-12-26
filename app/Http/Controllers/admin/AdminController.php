@@ -206,6 +206,7 @@ class AdminController extends Controller
         }
 
         if ($request->hasFile('images')) {
+            
             $images = $request->file('images');
             foreach ($images as $image) {
                 $imageName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . time().'.'.$image->extension();
@@ -226,7 +227,7 @@ class AdminController extends Controller
         // $product_variants = ProductVariant::orderBy('product_id')->get();
         // paginate
         $page = 1;
-        
+
 
 
         $product_variants = DB::table('Product_variants')

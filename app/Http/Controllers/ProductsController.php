@@ -31,15 +31,25 @@ class ProductsController extends Controller
         // $users = DB::table('users')->where('votes', 100)->get();
 
         $page = (int) $request->input('page', 1);
-        $limit = 4;
+        $limit = env('PAGE_SIZE');
         $offset = ($page - 1) * $limit;
 
-        
+        // $products = DB::table('Products')
+        // ->select('Products.*', 'Images.image_url')
+        // ->join('Images', 'Products.id', '=', 'Images.product_id')
+        // ->where('Images.is_primary', true)
+        // ->where('category_id', $category_id)
+        // ->addSelect(DB::raw('(SELECT price FROM Product_variants WHERE Product_variants.product_id = Products.id LIMIT 1) as representative_price'))
+        // ->orderBy('Products.created_at', 'desc')
+        // ->limit($limit)
+        // ->offset($offset)
+        // ->get();
 
         $products = DB::table('Products')
-        ->join('Images', 'Products.id', '=', 'Images.product_id')
-        ->where('Images.is_primary', true)
-        ->select('Products.*', 'Images.*')
+        ->select('Products.*')
+        // ->join('Images', 'Products.id', '=', 'Images.product_id')
+        // ->where('Images.is_primary', true)
+        ->addSelect(DB::raw('(SELECT image_url FROM Images WHERE Images.product_id = Products.id LIMIT 1) as image_url'))
         ->where('category_id', $category_id)
         ->addSelect(DB::raw('(SELECT price FROM Product_variants WHERE Product_variants.product_id = Products.id LIMIT 1) as representative_price'))
         ->orderBy('Products.created_at', 'desc')
@@ -63,7 +73,6 @@ class ProductsController extends Controller
 
         $imgages = DB::table('Images')
         ->where('product_id', $product_id)
-        ->where('is_primary', 0)
         ->get();
 
         $product_variants = DB::table('Product_variants')
@@ -81,16 +90,22 @@ class ProductsController extends Controller
         // ->where('name', 'like', '%'.$search.'%')
         // ->where('is_primary', 1)
         // ->get();
+        $page = (int) $request->input('page', 1);
+        $limit = env('PAGE_SIZE');
+        $offset = ($page - 1) * $limit;
 
         $products = DB::table('Products')
             ->join('Images', 'Products.id', '=', 'Images.product_id')
             ->where('Images.is_primary', true)
-            ->select('Products.*', 'Images.*')
+            ->select('Products.*', 'Images.image_url')
             ->addSelect(DB::raw('(SELECT price FROM Product_variants WHERE Product_variants.product_id = Products.id LIMIT 1) as representative_price'))
             ->orderBy('Products.created_at', 'desc')
             ->where('name', 'like', '%'.$search.'%')
+            ->limit($limit)
+            ->offset($offset)
             ->get();
-
-        return view('products',['products' => $products]);
+        
+        $total_page=(int) ceil(DB::table('Products')->where('name', 'like', '%'.$search.'%')->count() / $limit);
+        return view('products',['products' => $products,'tp' => $total_page,'page' => $page]);
     }
 }

@@ -19,7 +19,11 @@
             <img src="{{ Vite::asset('public/images/products/' . $product->image_url) }}" alt="{{$product->name}}">
 
             <div class="row thumbnail-gallery">
-                <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
+                @foreach($images as $image)
+                <img src="{{ Vite::asset('public/images/products/' . $image->image_url) }}" alt="{{$product->name}}"
+                    class="thumbnail">
+                @endforeach
+                <!-- <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 1" class="thumbnail">
                 <img src="https://tse1.mm.bing.net/th?id=OIP.c9_l8QXtYGdCm6loAewKiQHaHZ&pid=Api&P=0&h=180"
                     alt="Hình ảnh 2" class="thumbnail">
@@ -118,8 +122,9 @@
         <div class="product-description">
             <h3>Mô tả sản phẩm</h3>
             <p>
+                {{$product->description}}
 
-                <b>Thiết kế kiểu dáng:</b> Sang trọng, tối giản và hiện đại với khung viền kim loại (nhôm hoặc thép
+                <!-- <b>Thiết kế kiểu dáng:</b> Sang trọng, tối giản và hiện đại với khung viền kim loại (nhôm hoặc thép
                 không gỉ) và mặt lưng kính. <br><br>
                 <b>Màn hình:</b> Full màn hình với viền mỏng, thường sử dụng công nghệ Super Retina XDR OLED cho chất
                 lượng
@@ -151,7 +156,7 @@
 
                 <b>Kháng nước/bụi:</b> Tiêu chuẩn IP68 (chịu được nước ở
                 độ sâu 1-6 mét trong vòng 30 phút). Kết nối: Wi-Fi 6, 5G, Bluetooth 5.3, và AirDrop. Ecosystem: Tích
-                hợp sâu với hệ sinh thái Apple (MacBook, Apple Watch, iPad...).
+                hợp sâu với hệ sinh thái Apple (MacBook, Apple Watch, iPad...). -->
             </p>
         </div>
 

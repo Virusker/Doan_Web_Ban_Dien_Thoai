@@ -71,7 +71,7 @@
                 <ul class="pagination-list d-flex">
                     @for($i = 1; $i <= $tp; $i++)
                     <li class="{{ $i==$page?'active':'' }}">
-                        <a style="text-decoration:none;" href="?page={{ $i }}">
+                        <a style="text-decoration:none;" href="?q={{ request()->q }}&page={{ $i }}">
                         {{ $i }}
                         </a>
                     </li>
